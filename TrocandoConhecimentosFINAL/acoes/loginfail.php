@@ -21,12 +21,12 @@
 <div class="w3-top">       
  <div class="w3-bar w3-black w3-border-4 w3-mobile w3-card-4 w3-large w3-hide-small w3-hide-medium">
 
-     <a href="index.html" class="w3schools-logo w3-left">
+     <a href="index.php" class="w3schools-logo w3-left">
      <img class="w3-image" hegiht="50" width="60" src="imgs/logo.png"> 
      </a>     
      
      
-<a href="index.html" class="w3-bar-item customfont w3-mobile w3-button" style="font-family: 'Alfa Slab One', cursive;">Inicio</a>
+<a href="index.php" class="w3-bar-item customfont w3-mobile w3-button" style="font-family: 'Alfa Slab One', cursive;">Inicio</a>
      
    <a href="#" class="w3-bar-item w3-button w3-mobile"  style="font-family: 'Alfa Slab One', cursive;">Contato</a>
      
@@ -37,7 +37,7 @@
      
      <a href="#" class="w3-bar-tiem w3-button w3-mobile w3-right w3-text-blue" style="font-family: 'Alfa Slab One', cursive;">Entrar</a>
      
-       <a href="cadastro.html" class="w3-bar-tiem w3-button w3-right w3-mobile abrilfont" style="font-family: 'Alfa Slab One', cursive;">Cadastro</a>
+       <a href="cadastro.php" class="w3-bar-tiem w3-button w3-right w3-mobile abrilfont" style="font-family: 'Alfa Slab One', cursive;">Cadastro</a>
      
     </div>   
     </div>        
@@ -57,14 +57,14 @@
      </a>     </div>
     
  
-             <a href="index.html" class="w3-bar-item w3-mobile w3-center w3-button abrilfont" style="font-family: 'Alfa Slab One', cursive;">Inicio</a>
+             <a href="index.php" class="w3-bar-item w3-mobile w3-center w3-button abrilfont" style="font-family: 'Alfa Slab One', cursive;">Inicio</a>
      
    <a href="#" class="w3-bar-item w3-button w3-mobile w3-center"  style="font-family: 'Alfa Slab One', cursive;">Contato</a>
    
      
         <a href="#" class="w3-bar-item w3-mobile w3-button abrilfont w3-center w3-text-blue" style="font-family: 'Alfa Slab One', cursive;">Entrar</a>
 
-      <a href="cadastro.html" class="w3-bar-item w3-mobile w3-button abrilfont w3-center" style="font-family: 'Alfa Slab One', cursive;">Cadastro</a>
+      <a href="cadastro.php" class="w3-bar-item w3-mobile w3-button abrilfont w3-center" style="font-family: 'Alfa Slab One', cursive;">Cadastro</a>
             
    <form class="w3-bar-item w3-mobile" action="#">
      <input type="text" class="w3-bar-item w3-input w3-mobile" placeholder="Pesquisar livro..." style="padding:5px;" />
@@ -101,14 +101,16 @@
     <h4 class="w3-hide-medium" style="font-family: 'Alfa Slab One', cursive;">Login</h4>
      </div>   
 
-     <form class="w3-container w3-hide-medium  w3-hide-small w3-mobile">
+    <p class="w3-text-blue" style="font-family: 'Alfa Slab One', cursive;">E-mail ou senha inválidos, tente novamente.</p>
+    
+     <form class="w3-container w3-hide-medium  w3-hide-small w3-mobile" action="acoes/autenticacaoUsuario.php" method="POST">
 
    <p> <label class="w3-text-black w3-mobile"><b>E-mail:</b></label></p>
-      <p>  <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" style="width: 260px;"></p>
+      <p>  <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" name="email" style="width: 260px;"></p>
 
 
         <p> <label class="w3-text-black w3-mobile"><b>Senha:</b></label></p>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="password" style="width: 260px;"></p>
+       <p> <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="password" name="senha" style="width: 260px;"></p>
 
        <p> <input type="submit" class="w3-input w3-button w3-blue w3-mobile" value="Enviar" style="width:160px;position:relative;right:-50px;font-family: 'Alfa Slab One', cursive;"></p>
 
