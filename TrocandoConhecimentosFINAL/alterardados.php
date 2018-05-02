@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>    
-<title>Cadastrar livro</title>
+<title>Cadastro</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css/w3.css">
     <link rel="stylesheet" type="text/css" href="css/custom.css">
@@ -16,24 +16,23 @@
        <div class="w3-top">
  <div class="w3-bar w3-black w3-border-4 w3-mobile w3-card-4 w3-large w3-hide-small w3-hide-medium">
 
-     <a href="index.html" class="w3schools-logo w3-left">
+     <a href="index.php" class="w3schools-logo w3-left">
      <img class="w3-image" height="50" width="60" src="imgs/logo.png"> 
      </a>     
      
      
-<a href="index.html" class="w3-bar-item customfont w3-mobile w3-button" style="font-family: 'Alfa Slab One', cursive;">Gerenciar conta</a>
+<a href="index.php" class="w3-bar-item customfont w3-mobile w3-button" style="font-family: 'Alfa Slab One', cursive;">Inicio</a>
      
-   <a href="#" class="w3-bar-item w3-button w3-mobile"  style="font-family: 'Alfa Slab One', cursive;">Gerenciar livros</a>
-     
-        <a href="#" class="w3-bar-item w3-button w3-mobile"  style="font-family: 'Alfa Slab One', cursive;">Gerenciar trocas</a>
-    
+   <a href="#" class="w3-bar-item w3-button w3-mobile"  style="font-family: 'Alfa Slab One', cursive;">Contato</a>
      
    <form class="w3-bar-item w3-mobile" action="#">
      <input type="text" class="w3-bar-item w3-input w3-mobile w3-center" placeholder="Pesquisar livro..." style="padding:5px;" />
       <button type="submit" class="w3-button w3-blue w3-mobile" style="padding:5px;font-family: 'Alfa Slab One', cursive;">Buscar</button>      
      </form>
      
-     <a href="login.html" class="w3-bar-tiem w3-button w3-mobile w3-right" style="font-family: 'Alfa Slab One', cursive;">Sair</a>
+     <a href="login.php" class="w3-bar-tiem w3-button w3-mobile w3-right" style="font-family: 'Alfa Slab One', cursive;">Entrar</a>
+     
+       <a href="#" class="w3-bar-tiem w3-button w3-right w3-mobile abrilfont w3-text-blue" style="font-family: 'Alfa Slab One', cursive;">Cadastro</a>
      
     </div>   
     </div>
@@ -53,12 +52,12 @@
      </a>     </div>
     
  
-             <a href="index.html" class="w3-bar-item w3-mobile w3-center w3-button abrilfont" style="font-family: 'Alfa Slab One', cursive;">Inicio</a>
+             <a href="index.php" class="w3-bar-item w3-mobile w3-center w3-button abrilfont" style="font-family: 'Alfa Slab One', cursive;">Inicio</a>
      
    <a href="#" class="w3-bar-item w3-button w3-mobile w3-center"  style="font-family: 'Alfa Slab One', cursive;">Contato</a>
    
      
-        <a href="login.html" class="w3-bar-item w3-mobile w3-button abrilfont w3-center" style="font-family: 'Alfa Slab One', cursive;">Entrar</a>
+        <a href="login.php" class="w3-bar-item w3-mobile w3-button abrilfont w3-center" style="font-family: 'Alfa Slab One', cursive;">Entrar</a>
 
       <a href="#" class="w3-bar-item w3-mobile w3-button abrilfont w3-center w3-text-blue" style="font-family: 'Alfa Slab One', cursive;">Cadastro</a>
             
@@ -89,46 +88,139 @@
 <br class="w3-hide-medium w3-hide-small">
  <br class="w3-hide-medium w3-hide-small">
 -->
-    
-<br class="w3-hide-medium w3-hide-smal">
-<br class="w3-hide-medium w3-hide-smal">
-<br class="w3-hide-medium w3-hide-smal">
-    
-<div class="w3-display-bottommiddle w3-light-grey w3-card-4 w3-center w3-hide-medium w3-hide-small" style="width: 290px;position: relative; top:20px;">
-    <div class="w3-container w3-blue w3-hide-medium w3-hide-small" style="width:290px;">
-    <h4 class="w3-hide-medium" style="font-family: 'Alfa Slab One', cursive;">Cadastrar livro</h4>
-     </div>   
 
-     <form class="w3-container w3-hide-medium w3-mobile">
+<!-- EXIBINDO DADOS DO USUÁRIO -->
+
+  <?php
+        
+        include (__DIR__.'/../classes/conexao.php');
+        
+        $email = $_SESSION['email'];
+        $senha = $_SESSION['senha'];
+        
+        $stmt= $con->prepare("SELECT *  FROM usuario WHERE email=? AND senha=?");
+        
+        $stmt->bindParam(1,$email);
+        $stmt->bindParam(2,$senha);
+        
+        $stmt->execute();
+        
+        while($linha = $stmt->fetch(PDO::FETCH_ASSOC)){
+            
+            $cpf = $linha['cpfUsuario'];
+            $rg = $linha['rgUsuario'];
+            $nome = $linha['nomeUsuario'];
+            $dtn = $linha['dtNascimento'];
+            $telefone = $linha['telefone'];
+            $endereco = $linha['endereco'];
+            $nomeMae = $linha['nomeMae'];
+            $nomePai = $linha['nomePai'];
+            $emailbd = $linha['email'];
+            $senhabd = $linha['senha'];
+            $id = $linha['cdUsuario'];
+            
+            
+            //AVATAR
+            
+              $avatar = $linha['avatar'];
+            $nome = $linha['nomeUsuario'];
+            
    
-  <p> <label class="w3-text-black w3-mobile"><b>Capa:</b></label></p>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="file" style="width: 260px;"></p>
+            
+            
+echo "
+    <br class='w3-hide-medium w3-hide-smal'>
+<br class='w3-hide-medium w3-hide-smal'>
+<br class='w3-hide-medium w3-hide-smal'>
+";
+    
+echo 
+"<div class='w3-display-bottommiddle w3-light-grey w3-card-4 w3-center w3-hide-medium w3-hide-small' style='width: 290px;position: relative; top:20px;'>
+    <div class='w3-container w3-blue w3-hide-medium w3-hide-small' style='width:290px;'>
+    <h4 class='w3-hide-medium' style='font-family: 'Alfa Slab One', cursive;'>Alterar dados</h4>
+     </div>";   
 
+echo"
+    <form enctype='multipart/form-data' class='w3-container w3-hide-medium w3-mobile' method='POST' action='acoes/alterandoDados.php'>
+   ";
 
-   <p> <label class="w3-text-black w3-mobile"><b>Nome:</b></label></p>
-      <p>  <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" style="width: 260px;"></p>
+echo"
+  <p> <label class='w3-text-black w3-mobile'><b>Avatar:</b></label></p>
+       <p> <input class='w3-center w3-input w3-border w3-light-grey w3-mobile' name='image' type='file' style='width: 260px;'></p>
+";
 
-<p><label class="w3-text-black  w3-mobile"><b>Autor:</b></label></p>
-        <p><input class="w3-center w3-input w3-border w3-light-grey  w3-mobile" type="text" style="width: 260px;">
+echo"
+       <p>  <input class='w3-center w3-input w3-border w3-light-grey w3-mobile' name='cpf' type='hidden' style='width: 260px;'></p>
+    ";
+       
+echo"
+   <p> <label class='w3-text-black w3-mobile'><b>CPF:</b></label></p>
+      <p>  <input class='w3-center w3-input w3-border w3-light-grey w3-mobile' name='cpf' type='text' style='width: 260px;'></p>
+";
+    
 
-        <p><label class="w3-text-black  w3-mobile"><b>Tempo de uso:</b></label>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey  w3-mobile" type="text" style="width: 260px;"></p>
+echo"
+<p><label class='w3-text-black  w3-mobile'><b>RG:</b></label></p>
+        <p><input class='w3-center w3-input w3-border w3-light-grey  w3-mobile' name='rg' type='text' style='width: 260px;'>
+";
 
-<p><label class="w3-text-black w3-mobile"><b>Estado de conservação:</b></label></p>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" style="width: 260px;"></p>
+echo"
+        <p><label class='w3-text-black  w3-mobile'><b>Nome:</b></label>
+       <p> <input class='w3-center w3-input w3-border w3-light-grey  w3-mobile   name='nome' type='text' style='width: 260px;'></p>
+";
+   
+echo"
+<p><label class='w3-text-black w3-mobile'><b>Data de nascimento:</b></label></p>
+       <p> <input class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='text' name='dtn' style='width: 260px;'></p>
+";
 
+echo"
+<p><label class='w3-text-black  w3-mobile'><b>Telefone:</b></label></p>
+       <p> <input class='w3-center w3-input w3-border w3-light-grey  w3-mobile' type='text' name='telefone' style='width: 260px;'></p>
+";
+       
+echo"
+        <p><label class='w3-text-black'><b>Endereço:</b></label></p>
+      <p>  <input class='w3-center w3-input w3-border w3-light-grey  w3-mobile' type='text' name='endereco' style='width: 260px;'></p>
+";
 
-<p><label class="w3-text-black  w3-mobile"><b>Genero:</b></label></p>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey  w3-mobile" type="text" style="width: 260px;"></p>
+echo"
+<p> <label class='w3-text-black w3-mobile'><b>Nome da mae:</b></label></p>
+        <p> <input class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='text' name='nomemae' style='width: 260px;'></p>
+";
+        
+echo"
+<p> <label class='w3-text-black w3-mobile'><b>Nome do pai:</b></label></p>
+         <p><input class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='text' name='nomepai' style='width: 260px;'></p>
+";
+         
+echo"
+<p> <label class='w3-text-black w3-mobile'><b>E-mail:</b></label></p>
+        <p><input class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='text' name='email' style='width: 260px;'></p>
+";
 
-       <p> <input type="submit" class="w3-input w3-button w3-blue w3-mobile" value="Enviar" style="width:160px;position:relative;right:-50px;font-family: 'Alfa Slab One', cursive;"></p>
+echo"
+        <p> <label class='w3-text-black w3-mobile'><b>Senha:</b></label></p>
+       <p> <input class='w3-center w3-input w3-border w3-light-grey w3-mobile' name='senha' type='password' style='width: 260px;'></p>
+";
+       
+echo"
+       <p> <input type='submit' class='w3-input w3-button w3-blue w3-mobile' value='Enviar' style='width:160px;position:relative;right:-50px;font-family: 'Alfa Slab One', cursive;'></p>
 
      </form>
 </div>
+";
 
-<br class="w3-hide-medium w3-hide-small">
-  <br class="w3-hide-medium w3-hide-small">
-  <br class="w3-hide-medium w3-hide-small">
+echo"
+<br class='w3-hide-medium w3-hide-small'>
+  <br class='w3-hide-medium w3-hide-small'>
+  <br class='w3-hide-medium w3-hide-small'>
+"; 
+
+                   
+            
+        }
+        ?>
 
 <!-- FORMULARIO PARA O DESKTOP - FIM -->
 
@@ -144,7 +236,7 @@
      <form class="w3-container">
    
    <p><label class="w3-text-black"><b>Avatar:</b></label></p>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey" type="file" style="width: 260px;"></p>
+       <p> <input class="w3-center w3-input w3-border w3-light-grey" type="file" name="image" style="width: 260px;"></p>
 
 
    <p> <label class="w3-text-black"><b>CPF:</b></label></p>
@@ -203,7 +295,7 @@
      <form class="w3-container">
    
   <p> <label class="w3-text-black"><b>Avatar:</b></label></p>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey" type="file" style="width: 260px;"></p>
+       <p> <input class="w3-center w3-input w3-border w3-light-grey" type="file" name="image" style="width: 260px;"></p>
 
 
     <p><label class="w3-text-black"><b>CPF:</b></label></p>

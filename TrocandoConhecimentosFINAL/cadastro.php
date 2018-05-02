@@ -98,7 +98,7 @@
     <h4 class="w3-hide-medium" style="font-family: 'Alfa Slab One', cursive;">Cadastrar</h4>
      </div>   
 
-    <form class="w3-container w3-hide-medium w3-mobile" method="POST" action="acoes/cadastrandoUsuario.php">
+    <form enctype="multipart/form-data" class="w3-container w3-hide-medium w3-mobile" method="POST" action="acoes/cadastrandoUsuario.php">
    
   <p> <label class="w3-text-black w3-mobile"><b>Avatar:</b></label></p>
        <p> <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" name="image" type="file" style="width: 260px;"></p>

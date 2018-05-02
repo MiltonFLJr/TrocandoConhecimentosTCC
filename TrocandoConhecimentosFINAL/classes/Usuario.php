@@ -108,17 +108,11 @@ class Usuario{
         
         
     include(__DIR__.'/../classes/conexao.php');
-
-     
-    
-         
-          echo 'TESTANDO';
           
      $extensao = strtolower(substr($_FILES['image'] ['name'], -4));    
      $novo_nome = md5(time()) . $extensao;
      $diretorio =__DIR__."/../TrocandoConhecimentosTCC/TrocandoConhecimentosFINAL/avataresus/";
-    
-     move_uploaded_file($_FILES['image']['tmp_name'], $diretorio.$novo_nome);
+
      
      $this->setCpfContaUsuario($cpfContaUsuario);
      $this->setRgContaUsuario($rgContaUsuario);
@@ -163,12 +157,13 @@ class Usuario{
      echo "alert('O cadastro foi concluído, você ja pode logar!')";
      echo "</script>";
           
+     /*
    echo "<html>";
    echo "<head>";
    echo "<meta http-equiv='refresh' content='0;url=TELAlogin.php'>";
    echo "</head>";
    echo "</html>";
-      
+      */
     }
     
     public function excluirConta($emailContaUsuario,$senhaContaUsuario){

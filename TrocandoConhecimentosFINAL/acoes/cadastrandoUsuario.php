@@ -5,6 +5,7 @@ require_once(__DIR__.'/../classes/Usuario.php');
 
 $usuario = new Usuario();
 
+$_FILES['image'];
 $rg=$_POST['cpf'];
 $cpf=$_POST['rg'];
 $nome=$_POST['nome'];
