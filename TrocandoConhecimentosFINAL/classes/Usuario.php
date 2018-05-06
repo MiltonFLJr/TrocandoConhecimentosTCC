@@ -168,7 +168,7 @@ class Usuario{
     
     public function excluirConta($emailContaUsuario,$senhaContaUsuario){
         
-         include 'conexao.php';
+       include(__DIR__.'/../classes/conexao.php');
      
      $this->setEmailContaUsuario($emailContaUsuario);
      $this->setSenhaUsuario($senhaContaUsuario);
@@ -213,6 +213,7 @@ class Usuario{
 
 session_destroy();
       
+/*
         echo "<html>";
    echo "<head>";
    
@@ -224,7 +225,8 @@ session_destroy();
    
    echo "</head>";
     echo "</html>";   
-    
+    */
+
      }
      
         
@@ -232,7 +234,7 @@ session_destroy();
     
     public function alterarConta($id,$cpfContaUsuario,$rgContaUsuario,$nomeUsuario,$dataNascimentoContaUsuario,$telefoneContaUsuario,$enderecoContaUsuario,$nomeMaeContaUsuario,$nomePaiContaUsuario){
         
-        include 'conexao.php';
+       include(__DIR__.'/../classes/conexao.php');
         
        $this->setCpfContaUsuario($cpfContaUsuario);
      $this->setRgContaUsuario($rgContaUsuario);

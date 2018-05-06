@@ -1,6 +1,6 @@
 <?php
 
-require_once 'CLASSEUsuario.php';
+ require_once(__DIR__.'/../classes/Usuario.php');
 
 $usuario = new Usuario();
 
@@ -19,7 +19,7 @@ $usuario->alterarConta($idu, $cpf, $rg, $nome, $dataN, $telefone, $endereco, $no
 
    echo "<html>";
    echo "<head>";
-   echo "<meta http-equiv='refresh' content='0;url=TELALGDalterarDados.php'>";
+   echo "<meta http-equiv='refresh' content='0;url=/TrocandoConhecimentosTCC/TrocandoConhecimentosFINAL/alterardados.php'>";
    echo "</head>";
     echo "</html>";   
  
