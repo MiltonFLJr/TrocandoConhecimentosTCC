@@ -31,8 +31,8 @@
 <div class="w3-top">       
  <div class="w3-bar w3-black w3-border-4 w3-mobile w3-card-4 w3-large w3-hide-small w3-hide-medium">
 
-     <a href="index.php" class="w3schools-logo w3-left">
-     <img class="w3-image" height="50" width="60" src="imgs/logo.png"> 
+     <a href="#" class="w3schools-logo w3-left">
+     <img class="w3-image" hegiht="50" width="60" src="imgs/logo.png"> 
      </a>     
      
      
@@ -45,7 +45,7 @@
       <button type="submit" class="w3-button w3-blue w3-mobile" style="padding:5px;font-family: 'Alfa Slab One', cursive;">Buscar</button>      
      </form>
      
-     <a href="login.php" class="w3-bar-tiem w3-button w3-mobile w3-right" style="font-family: 'Alfa Slab One', cursive;">Entrar</a>
+     <a href="#" class="w3-bar-tiem w3-button w3-mobile w3-right" style="font-family: 'Alfa Slab One', cursive;">Entrar</a>
      
        <a href="cadastro.php" class="w3-bar-tiem w3-button w3-right w3-mobile abrilfont" style="font-family: 'Alfa Slab One', cursive;">Cadastro</a>
      
@@ -63,11 +63,11 @@
   <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
 
    <div class="w3-center"><a class="w3schools-logo w3-mobile">
-     <img class="w3-image" height="50" width="60" src="imgs/logo.png"> 
+     <img class="w3-image" hegiht="50" width="60" src="imgs/logo.png"> 
      </a>     </div>
     
  
-             <a href="index.php" class="w3-bar-item w3-mobile w3-center w3-button abrilfont w3-text-blue" style="font-family: 'Alfa Slab One', cursive;">Inicio</a>
+             <a href="index.html" class="w3-bar-item w3-mobile w3-center w3-button abrilfont w3-text-blue" style="font-family: 'Alfa Slab One', cursive;">Inicio</a>
      
    <a href="#" class="w3-bar-item w3-button w3-mobile w3-center"  style="font-family: 'Alfa Slab One', cursive;">Contato</a>
    

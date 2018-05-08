@@ -26,14 +26,14 @@
   <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border">
     <a href="#" class="w3-bar-item w3-button">Alterar dados pessoais</a>
     <a href="#" class="w3-bar-item w3-button">Alterar e-mail e senha</a>
-    <a href="#" class="w3-bar-item w3-button">Excluir conta</a>
+    <a href="excluirconta.php" class="w3-bar-item w3-button">Excluir conta</a>
   </div>
 </div>
 
 <div class="w3-dropdown-click">
   <button onclick="myFunction2()" class="w3-button w3-black" style="font-family: 'Alfa Slab One', cursive;">Livros ▼</button>
   <div id="Demo2" class="w3-dropdown-content w3-bar-block w3-border" style="width:210px;" >
-    <a href="#" class="w3-bar-item w3-button">Cadastrar livros</a>
+      <a href="cadastrarlivro.php" class="w3-bar-item w3-button">Cadastrar livros</a>
    <a href="#" class="w3-bar-item w3-button">Meus livros</a>
   </div>
 </div>

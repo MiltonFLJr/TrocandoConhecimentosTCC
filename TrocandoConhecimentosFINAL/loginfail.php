@@ -101,6 +101,8 @@
     <h4 class="w3-hide-medium" style="font-family: 'Alfa Slab One', cursive;">Login</h4>
      </div>   
 
+    <p class="w3-text-blue" style="font-family: 'Alfa Slab One', cursive;">E-mail ou senha inválidos, tente novamente.</p>
+    
      <form class="w3-container w3-hide-medium  w3-hide-small w3-mobile" action="acoes/autenticacaoUsuario.php" method="POST">
 
    <p> <label class="w3-text-black w3-mobile"><b>E-mail:</b></label></p>

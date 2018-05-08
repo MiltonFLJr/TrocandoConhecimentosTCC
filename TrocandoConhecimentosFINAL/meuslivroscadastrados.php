@@ -10,7 +10,22 @@
     </head>    
     
 <body>
-
+    
+  <?php
+    
+  if( isset($_SESSION['email']) && isset($_SESSION['senha']) ){
+      
+  }else{
+     /*
+          echo "<html>";
+   echo "<head>";
+   echo "<meta http-equiv='refresh' content='0;url=login.php'>";
+   echo "</head>";
+    echo "</html>";   
+      */
+  }
+  ?>
+    
     
     <!-- BARRA DE NAVEGAÇAO DESKTOP -->
        <div class="w3-top">
@@ -24,7 +39,7 @@
          <div class="w3-dropdown-click">
   <button onclick="myFunction()" class="w3-button w3-black" style="font-family: 'Alfa Slab One', cursive;">Conta ▼</button>
   <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border">
-      <a href="alterardados.php" class="w3-bar-item w3-button">Alterar dados pessoais</a>
+    <a href="alterardados.php" class="w3-bar-item w3-button">Alterar dados pessoais</a>
     <a href="#" class="w3-bar-item w3-button">Alterar e-mail e senha</a>
     <a href="excluirconta.php" class="w3-bar-item w3-button">Excluir conta</a>
   </div>
@@ -93,9 +108,9 @@
                 <div class="w3-dropdown-click">
   <button onclick="myFunction4()" class="w3-button w3-center" style="font-family: 'Alfa Slab One', cursive;background-color:#2B2B2B;">Conta ▼</button>
   <div id="Demo4" class="w3-dropdown-content w3-bar-block w3-border">
-    <a href="#" class="w3-bar-item w3-button">Alterar dados pessoais</a>
+      <a href="alterardados.php" class="w3-bar-item w3-button">Alterar dados pessoais</a>
     <a href="#" class="w3-bar-item w3-button">Alterar e-mail e senha</a>
-    <a href="#" class="w3-bar-item w3-button">Excluir conta</a>
+    <a href="excluirconta.php" class="w3-bar-item w3-button">Excluir conta</a>
   </div>
 </div>
 
@@ -103,7 +118,7 @@
   <div class="w3-dropdown-click">
   <button onclick="myFunction5()" class="w3-button w3-center" style="font-family: 'Alfa Slab One', cursive;background-color:#2B2B2B;">Livros ▼</button>
   <div id="Demo5" class="w3-dropdown-content w3-bar-block w3-border" style="width:210px;" >
-    <a href="#" class="w3-bar-item w3-button">Cadastrar livros</a>
+    <a href="cadastrarlivro.php" class="w3-bar-item w3-button">Cadastrar livros</a>
    <a href="#" class="w3-bar-item w3-button">Meus livros</a>
   </div>
 </div>
@@ -118,7 +133,7 @@
   </div>
 </div>
 
-   <a href="#" class="w3-bar-item w3-button w3-mobile w3-center"  style="font-family: 'Alfa Slab One', cursive;">Sair</a>
+  <a href="/acoes/encerrarSecao.php" class="w3-bar-item w3-button w3-mobile w3-center"  style="font-family: 'Alfa Slab One', cursive;">Sair</a>
             
    <form class="w3-bar-item w3-mobile" action="#">
      <input type="text" class="w3-bar-item w3-input w3-mobile" placeholder="Pesquisar livro..." style="padding:5px;" />
@@ -137,18 +152,12 @@
     
     
     
-    <!-- CADASTRO -->
+  
 
-<!-- FORMULARIO PARA O DESKTOP -->
 
-    <!--
-<br class="w3-hide-medium w3-hide-small">
- <br class="w3-hide-medium w3-hide-small">
--->
+ 
     
-<br class="w3-hide-medium w3-hide-smal" />
-<br class="w3-hide-medium w3-hide-smal" />
-<br class="w3-hide-medium w3-hide-smal" />
+
     
  <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-blue w3-hide-medium" style="position: relative;right:-15px;font-family: 'Alfa Slab One', cursive;">Livros para troca</button>
 
@@ -164,112 +173,40 @@
     </div>
   </div>
 
-
-<div class="w3-display-bottommiddle w3-light-grey w3-card-4 w3-center w3-hide-medium w3-hide-small" style="width: 290px;position: relative; top:20px;">
-    <div class="w3-container w3-blue w3-hide-medium w3-hide-small" style="width:290px;">
-    <h4 class="w3-hide-medium" style="font-family: 'Alfa Slab One', cursive;">Excluir conta</h4>
-     </div>   
-
-    <form class="w3-container w3-hide-medium w3-mobile" action="acoes/excluindoConta.php" method="POST">
+  
+  <!-- CÓNTEÚDO DA PÁGINA - INÍCIO -->
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+    <br>
+  <br>
+  <br>
+  <br>
+  <br>
+    <br>
+  <br>
+  <br>
+  <br>
+  <br>
+    <br>
+  <br>
+  <br>
+  <br>
+  <br>
+    <br>
+  <br>
+  <br>
+  <br>
+  <br>
+    <br>
+  <br>
+  <br>
+  <br>
+   <!-- CÓNTEÚDO DA PÁGINA - FIM -->
    
-  <p> <label class="w3-text-black w3-mobile"><b>E-mail:</b></label></p>
-      <p>  <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" name="email" style="width: 260px;"></p>
-
-
-        <p> <label class="w3-text-black w3-mobile"><b>Senha:</b></label></p>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="password" name="senha" style="width: 260px;"></p>
-
-        <p> <label class="w3-text-black w3-mobile"><b>Confirmar senha:</b></label></p>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="password" style="width: 260px;"></p>
-
-       <p> <input type="submit" class="w3-input w3-button w3-blue w3-mobile" value="Enviar" style="width:160px;position:relative;right:-50px;font-family: 'Alfa Slab One', cursive;"></p>
-
-     </form>
-</div>
-
-<br class="w3-hide-medium w3-hide-small">
-  <br class="w3-hide-medium w3-hide-small">
-  <br class="w3-hide-medium w3-hide-small">
-  <br class="w3-hide-medium w3-hide-small">
-  <br class="w3-hide-medium w3-hide-small">
-  <br class="w3-hide-medium w3-hide-small">
-   <br class="w3-hide-medium w3-hide-small">
-
-<!-- FORMULARIO PARA O DESKTOP - FIM -->
-
-<!-- FORMULARIO MEDIUM -->
-
-  <br class="w3-hide-large w3-hide-small">
-    
-<div class=" w3-display-bottommiddle w3-light-grey w3-card-4 w3-center w3-hide-large w3-hide-small" style="width: 290px;position:relative;bottom:-64px;">
-    <div class="w3-container w3-blue w3-hide-large w3-hide-small" style="width:290px;">
-    <h4 style="font-family: 'Alfa Slab One', cursive;">Excluir conta</h4>
-     </div>   
    
-  <form class="w3-container w3-hide-small w3-hide-large w3-mobile" action="acoes/excluindoConta.php" method="POST">
-   
-   <p> <label class="w3-text-black w3-mobile"><b>E-mail:</b></label></p>
-      <p>  <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" name="email" style="width: 260px;"></p>
-
-
-        <p> <label class="w3-text-black w3-mobile"><b>Senha:</b></label></p>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="password" name="senha" style="width: 260px;"></p>
-
-        <p> <label class="w3-text-black w3-mobile"><b>Confirmar senha:</b></label></p>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="password" style="width: 260px;"></p>
-
-      <p> <input type="submit" class="w3-input w3-button w3-blue w3-mobile" value="Enviar" style="width:160px;position:relative;right:-50px;font-family: 'Alfa Slab One', cursive;"></p>
-
-     </form>
-</div>
-
-<br class="w3-hide-large w3-hide-small">
-  <br class="w3-hide-large w3-hide-small">
-  <br class="w3-hide-large w3-hide-small">
-<br class="w3-hide-large w3-hide-small">
-<br class="w3-hide-large w3-hide-small">
-    <br class="w3-hide-large w3-hide-small">
-<br class="w3-hide-large w3-hide-small">
-    <br class="w3-hide-large w3-hide-small">
-
-<!-- FORMULARIO MEDIUM -->
-
-    <!-- FORMULARIO SMALL -->
-    
-    <div class=" w3-display-bottommiddle w3-light-grey w3-card-4 w3-center w3-hide-large w3-hide-medium" style="width: 290px;position:relative;bottom:-20px;">
-    <div class="w3-container w3-blue w3-hide-large w3-hide-medium" style="width:290px;">
-    <h4 style="font-family: 'Alfa Slab One', cursive;">Excluir conta</h4>
-     </div>   
-   
-<form class="w3-container w3-hide-medium w3-mobile" action="acoes/excluindoConta.php" method="POST">
-   
-   <p> <label class="w3-text-black w3-mobile"><b>E-mail:</b></label></p>
-      <p>  <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" name="email" style="width: 260px;"></p>
-
-
-        <p> <label class="w3-text-black w3-mobile"><b>Senha:</b></label></p>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="password" name="senha" style="width: 260px;"></p>
-
-        <p> <label class="w3-text-black w3-mobile"><b>Confirmar senha:</b></label></p>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="password" style="width: 260px;"></p>
-
-       <p> <input type="submit" class="w3-input w3-button w3-blue w3-mobile" value="Enviar" style="width:160px;font-family: 'Alfa Slab One', cursive;"></p>
-
-     </form>
-</div>
-
-<br class="w3-hide-large w3-hide-medium">
-  <br class="w3-hide-large w3-hide-medium">
-  <br class="w3-hide-large w3-hide-medium">
-<br class="w3-hide-large w3-hide-medium">
-<br class="w3-hide-large w3-hide-medium">
-    <br class="w3-hide-large w3-hide-medium">
-
-    
-    <!-- FORMULARIO SMALL -->
-    
-    <!-- CADASTRO -->
-
     <!-- FOOTER -->
    
     <!--

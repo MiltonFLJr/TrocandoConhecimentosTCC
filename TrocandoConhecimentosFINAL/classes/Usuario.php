@@ -109,10 +109,12 @@ class Usuario{
         
     include(__DIR__.'/../classes/conexao.php');
           
+    print_r($_FILES['image']);
+    
      $extensao = strtolower(substr($_FILES['image'] ['name'], -4));    
      $novo_nome = md5(time()) . $extensao;
-     $diretorio =__DIR__."/../TrocandoConhecimentosTCC/TrocandoConhecimentosFINAL/avataresus/";
-
+     $diretorio ="/avataresus/";
+    move_uploaded_file($_FILES['image']['tmp_name'], $diretorio.$novo_nome);
      
      $this->setCpfContaUsuario($cpfContaUsuario);
      $this->setRgContaUsuario($rgContaUsuario);
@@ -535,14 +537,9 @@ session_destroy();
      if( count($users) <= 0){
          
      
-    echo "<script language='javascript'>";
-     echo "location.href='loginfail.php'";
+     echo "<script language='javascript'>";
+     echo "location.href='/TrocandoConhecimentosTCC/TrocandoConhecimentosFINAL/loginfail.php'";
      echo "</script>";
-     
-   echo "<script language='javascript'>";
-     echo "alert('Falhou')";
-     echo "</script>";
- 
      
      }else{
         
@@ -567,15 +564,19 @@ session_destroy();
        $cdUs=$this->getCodigoContaUsuario();
         $nomeUs=$this->getNomeUsuario();
 
-      echo "<script language='javascript'>";
-     echo "alert('Deu certo!')";
-     echo "</script>";
-      
+          session_start();
+     
         $_SESSION['nome']=$nomeUs;
         $_SESSION['cdUs']=$cdUs;
          $_SESSION['email'] = $email;
          $_SESSION['senha'] = $senha;
          
+         /*
+         echo "<script language='javascript'>";
+     echo "location.href='/TrocandoConhecimentosTCC/TrocandoConhecimentosFINAL/meuslivroscadastrados.php'";
+     echo "</script>";
+      */
+   
          
          
       
