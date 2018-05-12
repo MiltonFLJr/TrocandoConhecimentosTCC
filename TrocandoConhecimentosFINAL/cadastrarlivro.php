@@ -10,7 +10,15 @@
     </head>    
     
 <body>
+    
+  <?php 
+    session_start();
 
+        $_SESSION['nome'];
+        $_SESSION['cdUs'];
+         $_SESSION['email'];
+         $_SESSION['senha'];
+    ?>
     
     <!-- BARRA DE NAVEGAÇAO DESKTOP -->
        <div class="w3-top">
@@ -165,44 +173,66 @@
 <!-- CADASTRO -->
   <!-- FORMULARIO PARA O DESKTOP -->
 
-<div class="w3-display-bottommiddle w3-light-grey w3-card-4 w3-center w3-hide-medium w3-hide-small" style="width: 290px;position: relative; top:20px;">
-    <div class="w3-container w3-blue w3-hide-medium w3-hide-small" style="width:290px;">
-    <h4 class="w3-hide-medium" style="font-family: 'Alfa Slab One', cursive;">Cadastrar livro</h4>
+  <?php  
+  
+  include 'conexao.php';
+        $font = 'Alfa Slab One';
+        $email = $_SESSION['email'];
+        
+        $stmt= $con->prepare("SELECT cdUsuario FROM usuario WHERE email=?");
+        
+        $stmt->bindParam(1,$email);
+        
+        $stmt->execute();
+        
+        while($linha = $stmt->fetch(PDO::FETCH_ASSOC)){
+            
+            $cdUsuario = $linha['cdUsuario'];
+            
+            echo"
+<div class='w3-display-bottommiddle w3-light-grey w3-card-4 w3-center w3-hide-medium w3-hide-small' style='width: 290px;position: relative; top:20px;'>
+    <div class='w3-container w3-blue w3-hide-medium w3-hide-small' style='width:290px;'>
+    <h4 class='w3-hide-medium' style='font-family: $font, cursive;'>Cadastrar livro</h4>
      </div>   
 
-     <form class="w3-container w3-hide-medium w3-mobile">
+    <form class='w3-container w3-hide-medium w3-mobile' action='__DIR__./../acoes/cadastrandoLivro.php' method='POST' enctype='multipart/form-data'    >
    
-  <p> <label class="w3-text-black w3-mobile"><b>Capa:</b></label></p>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="file" style="width: 260px;"></p>
+  <p> <label class='w3-text-black w3-mobile'><b>Capa:</b></label></p>
+       <p> <input class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='file' name='image' style='width: 260px;'></p>
+
+       <input type='hidden' placeholder='Codigo livro' name='cdUsuario' value='$cdUsuario' readonly>
+       
+       <input type='hidden' placeholder='Codigo livro' name='email' value='$email' readonly>
+
+   <p> <label class='w3-text-black w3-mobile'><b>Nome:</b></label></p>
+      <p>  <input class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='text' name='nomeLivro' style='width: 260px;'></p>
+
+<p><label class='w3-text-black  w3-mobile'><b>Autor:</b></label></p>
+        <p><input class='w3-center w3-input w3-border w3-light-grey  w3-mobile' type='text' name='autorLivro' style='width: 260px;'>
+
+        <p><label class='w3-text-black  w3-mobile'><b>Tempo de uso:</b></label>
+       <p> <input class='w3-center w3-input w3-border w3-light-grey  w3-mobile' type='text' name='idadeLivro' style='width: 260px;'></p>
+
+<p><label class='w3-text-black w3-mobile'><b>Estado de conservação:</b></label></p>
+       <p> <input class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='text' name='estadoConservacao' style='width: 260px;'></p>
 
 
-   <p> <label class="w3-text-black w3-mobile"><b>Nome:</b></label></p>
-      <p>  <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" style="width: 260px;"></p>
+<p><label class='w3-text-black  w3-mobile'><b>Genero:</b></label></p>
+       <p> <input class='w3-center w3-input w3-border w3-light-grey  w3-mobile' type='text' name='genero' style='width: 260px;'></p>
 
-<p><label class="w3-text-black  w3-mobile"><b>Autor:</b></label></p>
-        <p><input class="w3-center w3-input w3-border w3-light-grey  w3-mobile" type="text" style="width: 260px;">
-
-        <p><label class="w3-text-black  w3-mobile"><b>Tempo de uso:</b></label>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey  w3-mobile" type="text" style="width: 260px;"></p>
-
-<p><label class="w3-text-black w3-mobile"><b>Estado de conservação:</b></label></p>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" style="width: 260px;"></p>
-
-
-<p><label class="w3-text-black  w3-mobile"><b>Genero:</b></label></p>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey  w3-mobile" type="text" style="width: 260px;"></p>
-
-       <p> <input type="submit" class="w3-input w3-button w3-blue w3-mobile" value="Enviar" style="width:160px;position:relative;right:-50px;font-family: 'Alfa Slab One', cursive;"></p>
+       <p> <input type='submit' class='w3-input w3-button w3-blue w3-mobile' value='Enviar' style='width:160px;position:relative;right:-50px;font-family: $font, cursive;'></p>
 
      </form>
 </div>
 
-<br class="w3-hide-medium w3-hide-small">
-  <br class="w3-hide-medium w3-hide-small">
-  <br class="w3-hide-medium w3-hide-small">
-
-<!-- FORMULARIO PARA O DESKTOP - FIM -->
-
+<br class='w3-hide-medium w3-hide-small'>
+  <br class='w3-hide-medium w3-hide-small'>
+  <br class='w3-hide-medium w3-hide-small'>
+";
+        }
+        
+?>
+  <!-- FORMULARIO PARA O DESKTOP - FIM -->
 <!-- FORMULARIO MEDIUM -->
 
   <br class="w3-hide-large w3-hide-small">

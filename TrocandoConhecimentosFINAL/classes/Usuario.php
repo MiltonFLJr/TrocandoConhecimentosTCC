@@ -113,7 +113,7 @@ class Usuario{
     
      $extensao = strtolower(substr($_FILES['image'] ['name'], -4));    
      $novo_nome = md5(time()) . $extensao;
-     $diretorio ="/avataresus/";
+     $diretorio ="avataresus/";
     move_uploaded_file($_FILES['image']['tmp_name'], $diretorio.$novo_nome);
      
      $this->setCpfContaUsuario($cpfContaUsuario);
@@ -178,7 +178,7 @@ class Usuario{
      $email = $this->getEmailContaUsuario();
      $senha = $this->getSenhaUsuario();
      
-     $stmt = $con->prepare("SELECT email,senha FROM usuario WHERE email=? AND senha=? ");
+     $stmt = $con->prepare("SELECT email,senha,nome FROM usuario WHERE email=? AND senha=? ");
      
      $stmt->bindParam(1,$email);
      $stmt->bindParam(2,$senha);
@@ -559,23 +559,20 @@ session_destroy();
            $this->setNomeUsuario($linha['nomeUsuario']);
             
        }
-
        
        $cdUs=$this->getCodigoContaUsuario();
         $nomeUs=$this->getNomeUsuario();
 
-          session_start();
-     
         $_SESSION['nome']=$nomeUs;
         $_SESSION['cdUs']=$cdUs;
          $_SESSION['email'] = $email;
          $_SESSION['senha'] = $senha;
          
-         /*
+         
          echo "<script language='javascript'>";
      echo "location.href='/TrocandoConhecimentosTCC/TrocandoConhecimentosFINAL/meuslivroscadastrados.php'";
      echo "</script>";
-      */
+      
    
          
          

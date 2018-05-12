@@ -1,6 +1,6 @@
 <?php
 
-require_once 'CLASSEUsuario.php';
+require_once 'Usuario.php';
 
 class Livro extends Usuario{
     
@@ -96,7 +96,7 @@ public function cadastrarMeuLivro($nomeLivro, $autorLivro,$idadeLivro,$estadoCon
     
     $stmt = $con->prepare("INSERT INTO livro VALUES (?,?,?,?,?,?,?)");
     
-    echo $cd;
+  
     $stmt->bindParam(1,$cd); 
     $stmt->bindParam(2,$novo_nome); 
     $stmt->bindParam(3,$nome);
@@ -149,11 +149,10 @@ public function excluirMeuLivro($id){
     
     $stmt2->execute();
     
-    echo "<html>";
-   echo "<head>";
-   echo "<meta http-equiv='refresh' content='0;url=TELALGDmeusLivros.php'>";
-   echo "</head>";
-    echo "</html>";   
+    echo "<script language='javascript'>";
+     echo "location.href='/TrocandoConhecimentosTCC/TrocandoConhecimentosFINAL/meuslivroscadastrados.php'";
+     echo "</script>";
+
     
 }
 
@@ -352,9 +351,14 @@ public function alterarMeuLivro($codigoLivro,$nomeLivro,$autorLivro,$idadeLivro,
 public function consultarMeuLivro(){
         
         include 'conexao.php';
+
+        $_SESSION['nome'];
+        $_SESSION['cdUs'];
+         $_SESSION['email'];
+         $_SESSION['senha'];
         
-         include 'CDiniciarSessao.php';
-        
+         $font = "font-family:Alfa Slab One, cursive";
+                 
         $stmt= $con->prepare("SELECT cdLivro FROM usuario_livro WHERE cdUsuario=?");
         
         $stmt->bindParam(1,$_SESSION['cdUs']);
@@ -382,91 +386,59 @@ public function consultarMeuLivro(){
          $estado = $linha2['estadoConservacaoLivro'];
          $genero = $linha2['generoLivro'];
          
-         echo "<form action='CDexcluirLivro.php' method='POST'>";
-        echo "<table border='2' id='customers'>";
-        echo "<tr>";
+         echo"
+   
+    <form method='POST' action='../TrocandoConhecimentosFINAL/acoes/excluindoLivro.php'>
+    <input type='hidden' name='cd' value='$cdLivro'>
         
-        echo "<th>";
-        echo "Capa";
-        echo "</th>";
-        
-         echo "<th>";
-        echo "ID";
-        echo "</th>";
-        
-           echo "<th>";
-        echo "Nome";
-        echo "</th>";
-        
-        echo "<th>";
-        echo "Autor";
-        echo "</th>";
-        
-        echo "<th>";
-        echo "Idade";
-        echo "</th>";
-        
-         echo "<th>";
-        echo "Estado de conservação";
-        echo "</th>";
-        
-        echo "<th>";
-        echo "Gênero";
-        echo "</th>";
-        
-        
-        echo "<th>";
-        echo "Ação";
-        echo "</th>";
-       
-        
-         echo "<th>";
-        echo "Ação";
-        echo "</th>";
-        
-        echo "</tr>";
-        
-        echo "<tr>";
-        echo "<td>";
-        echo "<img src='/PJTCWEBH/capaslivros/$capa' width='120' height='150' ";
-        echo "</td>";
-        
-        echo "<td>";
-        echo $cdLivro;
-        echo "<input type='hidden' name='cd' value='$cdLivro'>";
-        echo "</td>";
-        
-         echo "<td>";
-        echo $nome;
-        echo "</td>";
-        
-        echo "<td>";
-        echo $autor;
-        echo "</td>";
-        
-        echo "<td>";
-        echo $idade;
-        echo "</td>";
-        
-        echo "<td>";
-        echo $estado;
-        echo "</td>";
-        
-         echo "<td>";
-        echo $genero;
-        echo "</td>";
-        
-        
-        echo "<td>";
-        echo "<button type='submit' class='form-control' value='Excluir'>Excluir</button>";
-        echo "</td>";
-        
-          echo "<td>";
-       echo "<a class='form-control' href='TELALGDalterarMeusLivros.php'>Alterar dados</a>";
-        echo "</td>";
-        
-        echo "</table>";  
-        echo "</form>";
+      <div class='w3-container'>
+   <table class='w3-table' border='2'>
+<tr>
+<th class='w3-black w3-text-white w3-center' style='$font;'>Capa</th>
+<th class='w3-black w3-text-white w3-center' style='$font;'>Nome</th>
+<th class='w3-black w3-text-white w3-center' style='$font;'>Autor</th>
+<th class='w3-black w3-text-white w3-center' style='$font;'>Tempo de uso</th>
+<th class='w3-black w3-text-white w3-center' style='$font;'>Estado de conservacao</th>
+<th class='w3-black w3-text-white w3-center w3-resposnsive' style='$font;'>Genero</th>
+<th class='w3-black w3-text-white w3-center w3-resposnsive' style='font-family: $font;'> </th>
+<th class='w3-black w3-text-white w3-center w3-resposnsive' style='font-family: '$font;'> </th>
+</tr>
+
+<br >
+<tr>
+  <td class='w3-light-gray w3-hover-blue w3-hide-small w3-hide-medium w3-resposnsive'>
+    <img class='w3-image w3-center' width='100' src='capaslivros/$capa'>
+  </td>
+
+<td class='w3-light-gray w3-hover-blue w3-resposnsive w3-hide-small w3-hide-large'>
+    <img class='w3-image w3-center' width='100' src='capaslivros/$capa'>
+  </td>
+
+  <td class='w3-light-gray w3-hover-blue w3-resposnsive w3-hide-medium w3-hide-large'>
+    <img class='w3-image w3-center' width='100' src='capaslivros/$capa'>
+  </td>
+
+
+<td class='w3-center w3-hover-blue'>$nome</td> 
+
+<td class='w3-center w3-hover-blue'>$autor</td> 
+
+<td class='w3-center w3-hover-blue'>$idade</td> 
+
+<td class='w3-center w3-hover-blue'>$estado</td> 
+
+<td class='w3-center w3-hover-blue'>$genero</td> 
+    
+<td class='w3-center'><a href='#' class='w3-button w3-blue' style='$font;'>Alterar</a></td> 
+
+<td class='w3-center'><button type='submit' class='w3-button w3-blue' style='$font;'>Excluir</button></td>
+
+</tr>
+
+   </table>
+ </div>
+</form>
+";
 
             
         }

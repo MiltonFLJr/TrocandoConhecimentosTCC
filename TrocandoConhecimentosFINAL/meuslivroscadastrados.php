@@ -13,17 +13,27 @@
     
   <?php
     
+  
+    session_start();
+
+        $_SESSION['nome'];
+        $_SESSION['cdUs'];
+         $_SESSION['email'];
+         $_SESSION['senha'];
+  
+  /*
   if( isset($_SESSION['email']) && isset($_SESSION['senha']) ){
       
   }else{
-     /*
+     
           echo "<html>";
    echo "<head>";
    echo "<meta http-equiv='refresh' content='0;url=login.php'>";
    echo "</head>";
-    echo "</html>";   
+    echo "</html>";  
+   } 
       */
-  }
+  
   ?>
     
     
@@ -68,7 +78,7 @@
      </form>
      
    
-     <a href="login.html" class="w3-bar-tiem w3-button w3-mobile w3-right" style="font-family: 'Alfa Slab One', cursive;">Sair</a>
+     <a href="login.php" class="w3-bar-tiem w3-button w3-mobile w3-right" style="font-family: 'Alfa Slab One', cursive;">Sair</a>
      
 <a class="w3-right w3-hide-medium w3-hide-small">
      <i style="position:relative;top:10px;right:-3px;">Usuario</i> 
@@ -155,8 +165,11 @@
   
 
 
- 
-    
+
+<br>
+<br>
+<br>
+<br>
 
     
  <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-blue w3-hide-medium" style="position: relative;right:-15px;font-family: 'Alfa Slab One', cursive;">Livros para troca</button>
@@ -173,40 +186,52 @@
     </div>
   </div>
 
+<button readonly class="w3-btn w3-black w3-hide-medium" style="width:500px;position: relative;top:80px;right:-250px;font-family: 'Alfa Slab One', cursive;">MEUS LIVROS CADASTRADOS</button>
   
+  <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
   <!-- CÓNTEÚDO DA PÁGINA - INÍCIO -->
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-    <br>
-  <br>
-  <br>
-  <br>
-  <br>
-    <br>
-  <br>
-  <br>
-  <br>
-  <br>
-    <br>
-  <br>
-  <br>
-  <br>
-  <br>
-    <br>
-  <br>
-  <br>
-  <br>
-  <br>
-    <br>
-  <br>
-  <br>
-  <br>
+  
+   <?php
+  
+      require_once('./classes/Livro.php');
+        
+   $livro = new Livro();
+   
+   $livro->consultarMeuLivro();
+        
+        ?>
+  
    <!-- CÓNTEÚDO DA PÁGINA - FIM -->
    
-   
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
     <!-- FOOTER -->
    
     <!--

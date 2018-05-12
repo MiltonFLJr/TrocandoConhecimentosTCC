@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>    
-<title>Cadastrar livro</title>
+<title>Alterar dados pessoais</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css/w3.css">
     <link rel="stylesheet" type="text/css" href="css/custom.css">
@@ -11,6 +11,14 @@
     
 <body>
 
+    <?php 
+    session_start();
+
+        $_SESSION['nome'];
+        $_SESSION['cdUs'];
+         $_SESSION['email'];
+         $_SESSION['senha'];
+    ?>
     
     <!-- BARRA DE NAVEGAÇAO DESKTOP -->
        <div class="w3-top">
@@ -53,7 +61,7 @@
      </form>
      
    
-     <a href="login.html" class="w3-bar-tiem w3-button w3-mobile w3-right" style="font-family: 'Alfa Slab One', cursive;">Sair</a>
+     <a href="acoes/encerrarSecao.php" class="w3-bar-tiem w3-button w3-mobile w3-right" style="font-family: 'Alfa Slab One', cursive;">Sair</a>
      
 <a class="w3-right w3-hide-medium w3-hide-small">
      <i style="position:relative;top:10px;right:-3px;">Usuario</i> 
@@ -118,7 +126,7 @@
   </div>
 </div>
 
-   <a href="#" class="w3-bar-item w3-button w3-mobile w3-center"  style="font-family: 'Alfa Slab One', cursive;">Sair</a>
+  <a href="/acoes/encerrarSessao.php/" class="w3-bar-item w3-button w3-mobile w3-center"  style="font-family: 'Alfa Slab One', cursive;">Sair</a>
             
    <form class="w3-bar-item w3-mobile" action="#">
      <input type="text" class="w3-bar-item w3-input w3-mobile" placeholder="Pesquisar livro..." style="padding:5px;" />
@@ -167,9 +175,6 @@
   <?php
         
          include('conexao.php');
-        
-        $_SESSION['email'] = "teste@teste.com";
-        $_SESSION['senha'] = "teste";
         
         $font_style='Alfa Slab One';
         $email = $_SESSION['email'];
