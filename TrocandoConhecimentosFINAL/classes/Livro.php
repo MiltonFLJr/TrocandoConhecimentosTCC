@@ -339,7 +339,7 @@ public function alterarMeuLivro($codigoLivro,$nomeLivro,$autorLivro,$idadeLivro,
         
           echo "<html>";
    echo "<head>";
-   echo "<meta http-equiv='refresh' content='0;url=TELALGDmeusLivros.php'>";
+   echo "<meta http-equiv='refresh' content='0;url=meuslivroscadastrados.php'>";
    echo "</head>";
     echo "</html>";   
     
@@ -429,7 +429,7 @@ public function consultarMeuLivro(){
 
 <td class='w3-center w3-hover-blue'>$genero</td> 
     
-<td class='w3-center'><a href='#' class='w3-button w3-blue' style='$font;'>Alterar</a></td> 
+<td class='w3-center'><a href='alterarmeuslivros.php' class='w3-button w3-blue' style='$font;'>Alterar</a></td> 
 
 <td class='w3-center'><button type='submit' class='w3-button w3-blue' style='$font;'>Excluir</button></td>
 

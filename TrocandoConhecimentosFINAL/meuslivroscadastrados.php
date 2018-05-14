@@ -78,7 +78,7 @@
      </form>
      
    
-     <a href="login.php" class="w3-bar-tiem w3-button w3-mobile w3-right" style="font-family: 'Alfa Slab One', cursive;">Sair</a>
+     <a href="acoes/encerrarSessao.php" class="w3-bar-tiem w3-button w3-mobile w3-right" style="font-family: 'Alfa Slab One', cursive;">Sair</a>
      
 <a class="w3-right w3-hide-medium w3-hide-small">
      <i style="position:relative;top:10px;right:-3px;">Usuario</i> 
@@ -186,14 +186,10 @@
     </div>
   </div>
 
-<button readonly class="w3-btn w3-black w3-hide-medium" style="width:500px;position: relative;top:80px;right:-250px;font-family: 'Alfa Slab One', cursive;">MEUS LIVROS CADASTRADOS</button>
+<p class="w3-responsive w3-center w3-large" style="font-family: 'Alfa Slab One', cursive;">MEUS LIVROS CADASTRADOS</p>
   
-  <br>
-<br>
-<br>
-<br>
-<br>
-<br>
+ 
+
 
   <!-- CÓNTEÚDO DA PÁGINA - INÍCIO -->
   
