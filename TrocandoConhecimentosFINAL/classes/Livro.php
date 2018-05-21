@@ -388,7 +388,8 @@ public function consultarMeuLivro(){
          
          echo"
    
-    <form method='POST' action='../TrocandoConhecimentosFINAL/acoes/excluindoLivro.php'>
+ 
+      <form method='POST' action='../TrocandoConhecimentosFINAL/acoes/excluindoLivro.php'>
     <input type='hidden' name='cd' value='$cdLivro'>
         
       <div class='w3-container'>
@@ -423,7 +424,7 @@ public function consultarMeuLivro(){
 
 <td class='w3-center w3-hover-blue'>$autor</td> 
 
-<td class='w3-center w3-hover-blue'>$idade</td> 
+1<td class='w3-center w3-hover-blue'>$idade</td> 
 
 <td class='w3-center w3-hover-blue'>$estado</td> 
 
@@ -544,9 +545,9 @@ public function consultarMeuLivro(){
 public function PesquisarLivroParaTrocar($info){
     
     include 'conexao.php';
-    
-    include 'CDiniciarSessao.php';
-    
+     
+     $font = "font-family:Alfa Slab One, cursive";
+     
     $stmt = $con->prepare("SELECT cdLivro FROM usuario_livro WHERE cdUsuario=? ");
     
     $stmt->bindParam(1,$_SESSION['cdUs']);
@@ -578,76 +579,76 @@ public function PesquisarLivroParaTrocar($info){
          $estado = $linha2['estadoConservacaoLivro'];
          $genero = $linha2['generoLivro'];
          
-         echo "<form action='CDenviandoSolicitacaoLivro.php' method='POST'>";
-        echo "<table border='2' id='customers'>";
+         echo "<form class='w3-container' action='CDenviandoSolicitacaoLivro.php' method='POST'>";
+        echo "<table class='w3-table' border='2'>";
         echo "<tr>";
         
-        echo "<th>";
+        echo "<th class='w3-black w3-text-white w3-center' style='$font;'>";
         echo "Capa";
         echo "</th>";
         
-         echo "<th>";
+         echo "<th class='w3-black w3-text-white w3-center' style='$font;'>";
         echo "ID";
         echo "</th>";
         
-           echo "<th>";
+           echo "<th class='w3-black w3-text-white w3-center' style='$font;'>";
         echo "Nome";
         echo "</th>";
         
-        echo "<th>";
+        echo "<th class='w3-black w3-text-white w3-center' style='$font;'>";
         echo "Autor";
         echo "</th>";
         
-        echo "<th>";
+        echo "<th class='w3-black w3-text-white w3-center' style='$font;'>";
         echo "Idade";
         echo "</th>";
         
-         echo "<th>";
+         echo "<th class='w3-black w3-text-white w3-center' style='$font;'>";
         echo "Estado de conservação";
         echo "</th>";
         
-        echo "<th>";
+        echo "<th class='w3-black w3-text-white w3-center' style='$font;'>";
         echo "Gênero";
         echo "</th>";
         
-      echo "<th>";
+      echo "<th class='w3-black w3-text-white w3-center' style='$font;'>";
         echo "Oferecer Livro";
         echo "</th>";
         
-        echo "<th>";
+        echo "<th class='w3-black w3-text-white w3-center' style='$font;'>";
         echo "Ação";
         echo "</th>";
         
         echo "</tr>";
         
         echo "<tr>";
-        echo "<td>";
+        echo "<td class='w3-center w3-hover-blue'>";
         echo "<img src='/PJTCWEBH/capaslivros/$capa' width='120' height='150' ";
         echo "</td>";
         
-        echo "<td>";
+        echo "<td class='w3-center w3-hover-blue'>";
         echo $cdLivro;
         echo "<input type='hidden' name='cd' value='$cdLivro'>";
         echo "</td>";
         
-         echo "<td>";
+         echo "<td class='w3-center w3-hover-blue'>";
         echo $nome;
         echo "<input type='hidden' name='nomeLivro' value='$nome'>";
         echo "</td>";
         
-        echo "<td>";
+        echo "<td class='w3-center w3-hover-blue'>";
         echo $autor;
         echo "</td>";
         
-        echo "<td>";
+        echo "<td class='w3-center w3-hover-blue'>";
         echo $idade;
         echo "</td>";
         
-        echo "<td>";
+        echo "<td class='w3-center w3-hover-blue'>";
         echo $estado;
         echo "</td>";
         
-         echo "<td>";
+         echo "<td class='w3-center w3-hover-blue'>";
         echo $genero;
         echo "</td>";
         

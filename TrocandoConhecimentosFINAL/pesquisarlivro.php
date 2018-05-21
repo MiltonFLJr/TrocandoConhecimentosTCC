@@ -72,8 +72,8 @@
   </div>
 </div>
 
-     <form class="w3-bar-item w3-mobile" action="pesquisarlivro.php" method="POST">
-     <input type="text" name="info" class="w3-bar-item w3-input w3-mobile w3-center" placeholder="Pesquisar livro..." style="padding:5px; width:150px;" />
+   <form class="w3-bar-item w3-mobile" action="#">
+     <input type="text" class="w3-bar-item w3-input w3-mobile w3-center" placeholder="Pesquisar livro..." style="padding:5px; width:150px;" />
       <button type="submit" class="w3-button w3-blue w3-mobile" style="padding:5px;font-family: 'Alfa Slab One', cursive;">Buscar</button>      
      </form>
      
@@ -145,9 +145,9 @@
 
   <a href="/acoes/encerrarSecao.php" class="w3-bar-item w3-button w3-mobile w3-center"  style="font-family: 'Alfa Slab One', cursive;">Sair</a>
             
-  <form class="w3-bar-item w3-mobile" action="aleatoria.php" method="POST">
-     <input type="text" name="info" class="w3-bar-item w3-input w3-mobile" placeholder="Pesquisar livro..." style="padding:5px;">
-       <input type="submit" class="w3-button w3-blue w3-mobile" style="padding:5px;width:167px;font-family: 'Alfa Slab One', cursive;" value="Enviar">      
+   <form class="w3-bar-item w3-mobile" action="#">
+     <input type="text" class="w3-bar-item w3-input w3-mobile" placeholder="Pesquisar livro..." style="padding:5px;" />
+       <button type="submit" class="w3-button w3-blue w3-mobile" style="padding:5px;width:167px;font-family: 'Alfa Slab One', cursive;">Buscar</button>       
      </form>
              
 </div>
@@ -186,7 +186,7 @@
     </div>
   </div>
 
-<p class="w3-responsive w3-center w3-large" style="font-family: 'Alfa Slab One', cursive;">MEUS LIVROS CADASTRADOS</p>
+<p class="w3-responsive w3-center w3-large" style="font-family: 'Alfa Slab One', cursive;">RESULTADOS</p>
   
 
   <!-- CÓNTEÚDO DA PÁGINA - INÍCIO -->
@@ -194,11 +194,13 @@
    <?php
   
       require_once('./classes/Livro.php');
+      
+      $infol=$_POST['info'];
         
    $livro = new Livro();
    
-   $livro->consultarMeuLivro();
-        
+   $livro->PesquisarLivroParaTrocar($infol);
+   
         ?>
   
    <!-- CÓNTEÚDO DA PÁGINA - FIM -->
