@@ -154,18 +154,18 @@ class Usuario{
      $stmt->bindParam(11,$senha);
      
      $stmt->execute();
-     
-     echo "<script language='javascript'>";
-     echo "alert('O cadastro foi concluído, você ja pode logar!')";
-     echo "</script>";
-          
+             
      /*
    echo "<html>";
    echo "<head>";
-   echo "<meta http-equiv='refresh' content='0;url=TELAlogin.php'>";
+   echo "<meta http-equiv='refresh' content='0;url=cadastroconcluido.php'>";
    echo "</head>";
    echo "</html>";
       */
+     
+     header('Location: cadastroconcluido.php');
+     
+     
     }
     
     public function excluirConta($emailContaUsuario,$senhaContaUsuario){
@@ -567,6 +567,7 @@ session_destroy();
         $_SESSION['cdUs']=$cdUs;
          $_SESSION['email'] = $email;
          $_SESSION['senha'] = $senha;
+         
          
          
          echo "<script language='javascript'>";

@@ -11,14 +11,24 @@
     
 <body>
     
-  <?php 
+   <?php
+    
+  
     session_start();
 
         $_SESSION['nome'];
         $_SESSION['cdUs'];
          $_SESSION['email'];
          $_SESSION['senha'];
-    ?>
+  
+  if( isset($_SESSION['email']) && isset($_SESSION['senha']) ){
+      
+  }else{
+     
+         header('Location: login.php');
+   } 
+  
+  ?>
     
     <!-- BARRA DE NAVEGAÇAO DESKTOP -->
        <div class="w3-top">
@@ -64,7 +74,7 @@
      <a href="acoes/encerrarSessao.php" class="w3-bar-tiem w3-button w3-mobile w3-right" style="font-family: 'Alfa Slab One', cursive;">Sair</a>
      
 <a class="w3-right w3-hide-medium w3-hide-small">
-     <i style="position:relative;top:10px;right:-3px;">Usuario</i> 
+     <i style="position:relative;top:10px;right:-3px;"> <?php print_r($_SESSION['nome']) ?> </i> 
      </a>     
 
        <a class="w3-right w3-hide-medium w3-hide-small">
@@ -85,7 +95,7 @@
      </a>     
 
          <a class="w3-bar-item w3-left w3-hide-large">
-     <i style="position:relative;top:10px;">Usuario</i> 
+     <i style="position:relative;top:10px;"> <?php print_r($_SESSION['nome']) ?> </i> 
      </a>     
        
  <!--SIDEBAR -->
