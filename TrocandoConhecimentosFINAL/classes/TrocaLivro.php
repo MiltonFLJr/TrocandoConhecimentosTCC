@@ -1,6 +1,6 @@
 <?php
 
-require_once 'CLASSELivroTrocaLivro.php';
+require_once 'LivroTrocaLivro.php';
 
 class TrocaLivro extends LivroTrocaLivro {
 
@@ -96,7 +96,11 @@ class TrocaLivro extends LivroTrocaLivro {
    
    public function consultarTrocaLivro(){
        
- include 'CDiniciarSessao.php';  
+        $_SESSION['nome'];
+        $_SESSION['cdUs'];
+         $_SESSION['email'];
+         $_SESSION['senha'];
+         
    include 'conexao.php';
    
    $stmt = $con->prepare("SELECT cdLivro FROM usuario_livro WHERE cdUsuario=? ");

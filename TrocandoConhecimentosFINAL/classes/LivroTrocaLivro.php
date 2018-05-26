@@ -1,6 +1,6 @@
 <?php
 
-require_once 'CLASSELivro.php';
+require_once 'Livro.php';
 
 class LivroTrocaLivro extends Livro{
    

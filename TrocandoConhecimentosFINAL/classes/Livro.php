@@ -579,7 +579,7 @@ public function PesquisarLivroParaTrocar($info){
          $estado = $linha2['estadoConservacaoLivro'];
          $genero = $linha2['generoLivro'];
          
-         echo "<form class='w3-container' action='CDenviandoSolicitacaoLivro.php' method='POST'>";
+         echo "<form class='w3-container' action='acoes/enviandoSolicitacaoLivro.php' method='POST'>";
         echo "<table class='w3-table' border='2'>";
         echo "<tr>";
         
