@@ -130,8 +130,8 @@ class TrocaLivro extends LivroTrocaLivro {
            while($linha3 = $stmt3->fetch(PDO::FETCH_ASSOC)){
               
                
-                 echo "<form action='CDexcluirAceitarSolicitacao.php' method='POST'>";
-        echo "<table border='2' id='customers'>";
+                 echo "<form action='acoes/recusandoOuAceitandorSolicitacao.php' method='POST'>";
+        echo "<table class='w3-table' border='2' id='customers'>";
         echo "<tr>";
         
         echo "<th>";

@@ -66,7 +66,7 @@ public function cadastrarMeuLivro($nomeLivro, $autorLivro,$idadeLivro,$estadoCon
      if(isset($_FILES['image'])){
      $extensao = strtolower(substr($_FILES['image'] ['name'], -4));    
      $novo_nome = md5(time()) . $extensao;
-     $diretorio ="capaslivros/";
+     $diretorio ="../capaslivros/";
     move_uploaded_file($_FILES['image']['tmp_name'], $diretorio.$novo_nome);
     
 
@@ -129,6 +129,8 @@ public function cadastrarMeuLivro($nomeLivro, $autorLivro,$idadeLivro,$estadoCon
     $stmt2->execute();
     
     }
+
+    header('LOCATION: ../meuslivroscadastrados.php');
     
 }
 
@@ -387,7 +389,6 @@ public function consultarMeuLivro(){
          $genero = $linha2['generoLivro'];
          
          echo"
-   
  
       <form method='POST' action='../TrocandoConhecimentosFINAL/acoes/excluindoLivro.php'>
     <input type='hidden' name='cd' value='$cdLivro'>
@@ -405,7 +406,6 @@ public function consultarMeuLivro(){
 <th class='w3-black w3-text-white w3-center w3-resposnsive' style='font-family: '$font;'> </th>
 </tr>
 
-<br >
 <tr>
   <td class='w3-light-gray w3-hover-blue w3-hide-small w3-hide-medium w3-resposnsive'>
     <img class='w3-image w3-center' width='100' src='capaslivros/$capa'>
@@ -424,7 +424,7 @@ public function consultarMeuLivro(){
 
 <td class='w3-center w3-hover-blue'>$autor</td> 
 
-1<td class='w3-center w3-hover-blue'>$idade</td> 
+<td class='w3-center w3-hover-blue'>$idade</td> 
 
 <td class='w3-center w3-hover-blue'>$estado</td> 
 
@@ -623,7 +623,7 @@ public function PesquisarLivroParaTrocar($info){
         
         echo "<tr>";
         echo "<td class='w3-center w3-hover-blue'>";
-        echo "<img src='/PJTCWEBH/capaslivros/$capa' width='120' height='150' ";
+        echo "<img src='capaslivros/$capa' width='120' height='150' ";
         echo "</td>";
         
         echo "<td class='w3-center w3-hover-blue'>";
@@ -697,7 +697,7 @@ SELEÇÃO POR MENU SEM USO */
         echo "</td>"; 
         
         echo "<td>";
-        echo "<button type='submit' class='form-control' value='Excluir'>Enviar solicitação troca</button>";
+        echo "<button type='submit' class='w3-button w3-blue' style='$font;'>Enviar solicitação troca</button>";
         echo "</td>";
         
         echo "</tr>";

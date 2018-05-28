@@ -108,12 +108,10 @@ class Usuario{
         
         
     include(__DIR__.'/../classes/conexao.php');
-          
-    print_r($_FILES['image']);
     
      $extensao = strtolower(substr($_FILES['image'] ['name'], -4));    
      $novo_nome = md5(time()) . $extensao;
-     $diretorio ="avataresus/";
+     $diretorio ="../avatarusuarios/";
     move_uploaded_file($_FILES['image']['tmp_name'], $diretorio.$novo_nome);
      
      $this->setCpfContaUsuario($cpfContaUsuario);

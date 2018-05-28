@@ -60,9 +60,9 @@
 <div class="w3-dropdown-click">
   <button onclick="myFunction3()" class="w3-button w3-black" style="font-family: 'Alfa Slab One', cursive;">Trocas ▼</button>
   <div id="Demo3" class="w3-dropdown-content w3-bar-block w3-border">
-    <a href="#" class="w3-bar-item w3-button">Solicitaçoes enviadas</a>
-    <a href="#" class="w3-bar-item w3-button">Solicitaçoes recebidas</a>
-    <a href="#" class="w3-bar-item w3-button">Historico</a>
+    <a href="solicitacoestrocaenviadas.php" class="w3-bar-item w3-button">Solicitaçoes enviadas</a>
+    <a href="solicitacoespendentestroca.php" class="w3-bar-item w3-button">Solicitaçoes recebidas</a>
+    <a href="historicodetrocas.php" class="w3-bar-item w3-button">Historico</a>
   </div>
 </div>
 
@@ -79,7 +79,28 @@
      </a>     
 
        <a class="w3-right w3-hide-medium w3-hide-small">
-     <img class="w3-image" width="53" src="imgs/avatar.jpeg"> 
+
+     <?php 
+
+include 'conexao.php';
+
+$stmt = $con->prepare("SELECT avatar FROM usuario WHERE email=?");
+
+$stmt->bindParam(1,$_SESSION['email']);
+
+$stmt->execute();
+
+while($linha = $stmt->fetch(PDO::FETCH_ASSOC)){
+
+$avatar = $linha['avatar'];
+
+ echo"<img class='w3-image w3-center' width='50' src='avatarusuarios/$avatar'>";
+
+}
+
+
+     ?>
+
      </a>     
 
     </div>   
@@ -92,7 +113,28 @@
          
 
           <a class="w3-left w3-hide-large">
-     <img class="w3-image" width="53" src="imgs/avatar.jpeg"> 
+     
+<?php 
+
+include 'conexao.php';
+
+$stmt = $con->prepare("SELECT avatar FROM usuario WHERE email=?");
+
+$stmt->bindParam(1,$_SESSION['email']);
+
+$stmt->execute();
+
+while($linha = $stmt->fetch(PDO::FETCH_ASSOC)){
+
+$avatar = $linha['avatar'];
+
+ echo"<img class='w3-image w3-center' width='50' src='avatarusuarios/$avatar'>";
+
+}
+
+
+     ?>
+
      </a>     
 
          <a class="w3-bar-item w3-left w3-hide-large">
@@ -131,9 +173,9 @@
         <div class="w3-dropdown-click">
   <button onclick="myFunction6()" class="w3-button w3-center" style="font-family: 'Alfa Slab One', cursive;background-color:#2B2B2B;">Trocas ▼</button>
   <div id="Demo6" class="w3-dropdown-content w3-bar-block w3-border">
-    <a href="#" class="w3-bar-item w3-button">Solicitaçoes enviadas</a>
-    <a href="#" class="w3-bar-item w3-button">Solicitaçoes recebidas</a>
-    <a href="#" class="w3-bar-item w3-button">Historico</a>
+    <a href="solicitacoestrocaenviadas.php" class="w3-bar-item w3-button">Solicitaçoes enviadas</a>
+    <a href="solicitacoespendentestroca.php" class="w3-bar-item w3-button">Solicitaçoes recebidas</a>
+    <a href="historicodetrocas.php" class="w3-bar-item w3-button">Historico</a>
   </div>
 </div>
 
@@ -197,6 +239,9 @@
   
    <!-- CÓNTEÚDO DA PÁGINA - FIM -->
    
+<br>
+<br>
+<br>
 <br>
 <br>
 <br>
