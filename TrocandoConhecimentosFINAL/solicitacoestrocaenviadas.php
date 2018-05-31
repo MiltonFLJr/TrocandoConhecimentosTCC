@@ -53,7 +53,7 @@
   <button onclick="myFunction2()" class="w3-button w3-black" style="font-family: 'Alfa Slab One', cursive;">Livros ▼</button>
   <div id="Demo2" class="w3-dropdown-content w3-bar-block w3-border" style="width:210px;" >
       <a href="cadastrarlivro.php" class="w3-bar-item w3-button">Cadastrar livros</a>
-   <a href="meuslivroscadastrados" class="w3-bar-item w3-button">Meus livros</a>
+   <a href="meuslivroscadastrados.php" class="w3-bar-item w3-button">Meus livros</a>
   </div>
 </div>
 
@@ -123,7 +123,7 @@
   <button onclick="myFunction5()" class="w3-button w3-center" style="font-family: 'Alfa Slab One', cursive;background-color:#2B2B2B;">Livros ▼</button>
   <div id="Demo5" class="w3-dropdown-content w3-bar-block w3-border" style="width:210px;" >
     <a href="cadastrarlivro.php" class="w3-bar-item w3-button">Cadastrar livros</a>
-   <a href="#" class="w3-bar-item w3-button">Meus livros</a>
+   <a href="meuslivroscadastrados.php" class="w3-bar-item w3-button">Meus livros</a>
   </div>
 </div>
    
@@ -131,9 +131,9 @@
         <div class="w3-dropdown-click">
   <button onclick="myFunction6()" class="w3-button w3-center" style="font-family: 'Alfa Slab One', cursive;background-color:#2B2B2B;">Trocas ▼</button>
   <div id="Demo6" class="w3-dropdown-content w3-bar-block w3-border">
-    <a href="#" class="w3-bar-item w3-button">Solicitaçoes enviadas</a>
+    <a href="solicitacoestrocaenviadas.php" class="w3-bar-item w3-button">Solicitaçoes enviadas</a>
     <a href=solicitacoespendentestroca.php" class="w3-bar-item w3-button">Solicitaçoes recebidas</a>
-    <a href="#" class="w3-bar-item w3-button">Historico</a>
+    <a href="historicodetrocas.php" class="w3-bar-item w3-button">Historico</a>
   </div>
 </div>
 
@@ -191,7 +191,7 @@
         
    $livro = new TrocaLivro();
    
-   $livro->consultarTrocaLivro();
+   $livro->exibirSolicitacoesEnviadas();
         
         ?>
 

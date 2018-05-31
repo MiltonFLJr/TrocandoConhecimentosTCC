@@ -111,7 +111,7 @@ class TrocaLivro extends LivroTrocaLivro {
    
    while($linha = $stmt->fetch(PDO::FETCH_ASSOC)){
        
-       $pendente = "pendente";
+       $pendente = "Pendente";
        
        $stmt2 = $con->prepare("SELECT nomeLivro FROM livro WHERE cdLivro=? ");
        
@@ -268,7 +268,89 @@ class TrocaLivro extends LivroTrocaLivro {
       
   }
   
-  public function confirmarTroca(){
+  public function exibirSolicitacoesEnviadas(){
+      
+      require_once('conexao.php');
+      
+      $font = "font-family:Alfa Slab One, cursive"; 
+      
+        $_SESSION['nome'];
+       $cdUsuario = $_SESSION['cdUs'];
+         $_SESSION['email'];
+         $_SESSION['senha'];
+         
+      $stmt = $con->prepare("SELECT cdLivro,cdUsuario FROM livro_troca_livro WHERE cdUsuario=?");
+      
+      $stmt->bindParam(1,$cdUsuario);
+      
+      $stmt->execute();
+   
+      while($linha = $stmt->fetch(PDO::FETCH_ASSOC)){
+          
+          $cdl = $linha['cdLivro'];
+          $cdu = $linha['cdUsuario'];
+          
+          $stmt2 = $con->prepare("SELECT * FROM troca_livro WHERE cdLivro=? AND cdUsuario=?");
+          
+          $stmt2->bindParam(1,$linha['cdLivro']);
+          $stmt2->bindParam(2,$linha['cdUsuario']);
+          $stmt2->execute();
+      
+          while($linha2 = $stmt2->fetch(PDO::FETCH_ASSOC)){
+              
+              $livroOferecido = $linha2['nomeLivroOferecido'];
+              $nmLivro = $linha2['nmLivro'];
+              $DATE = $linha2['DATE'];
+              $status = $linha2['statusTroca'];
+              
+              echo "
+                  <div class='w3-container'>
+      <form action='__DIR__./../acoes/cancelandoSolicitacao.php' method='POST'> 
+      <input type='hidden' name='cdUs' value='$cdu'>
+      <input type='hidden' name='cdlivro' value='$cdl'>
+      <table border='2' class='w3-table'>
+      <tr>
+     <th class='w3-black w3-text-white w3-center' style='$font;'>Livro oferecido</th>
+     <th class='w3-black w3-text-white w3-center' style='$font;'>Livro almejado</th>
+     <th class='w3-black w3-text-white w3-center' style='$font;'>Status da troca</th>
+     <th class='w3-black w3-text-white w3-center' style='$font;'>Data</th>
+     <th class='w3-black w3-text-white w3-center' style='$font;'> </th>
+</tr>
+
+<tr>
+<td class='w3-center'>$livroOferecido</td>
+<td class='w3-center'>$nmLivro</td>
+<td class='w3-center'>$status</td>    
+<td class='w3-center'>$DATE</td>
+<td class='w3-center'><input class='w3-button w3-blue w3-center' style='$font;' type='submit' value='Cancelar'></td>    
+</tr>
+</table>
+</form>
+</div>
+";
+              
+          }
+  }
+      
+  }
+  
+  public function cancelarSolicitacao($cdUs,$cdl){
+      
+      include('conexao.php');
+      
+      $stmt = $con->prepare("DELETE FROM livro_troca_livro WHERE cdUsuario=? AND cdLivro=?");
+      
+      $stmt->bindParam(1,$cdUs);
+      $stmt->bindParam(2,$cdl);
+      $stmt->execute();
+      
+      $stmt2 = $con->prepare("DELETE FROM troca_livro WHERE cdUsuario=? AND cdLivro=?");
+      
+      $stmt2->bindParam(1,$cdUs);
+      $stmt2->bindParam(2,$cdl);
+      $stmt2->execute();
+      
+      header('location:../solicitacoestrocaenviadas.php');
       
   }
   

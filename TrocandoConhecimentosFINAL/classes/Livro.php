@@ -420,15 +420,15 @@ public function consultarMeuLivro(){
   </td>
 
 
-<td class='w3-center w3-hover-blue'>$nome</td> 
+<td class='w3-center'>$nome</td> 
 
-<td class='w3-center w3-hover-blue'>$autor</td> 
+<td class='w3-center'>$autor</td> 
 
-<td class='w3-center w3-hover-blue'>$idade</td> 
+<td class='w3-center'>$idade</td> 
 
-<td class='w3-center w3-hover-blue'>$estado</td> 
+<td class='w3-center'>$estado</td> 
 
-<td class='w3-center w3-hover-blue'>$genero</td> 
+<td class='w3-center'>$genero</td> 
     
 <td class='w3-center'><a href='alterarmeuslivros.php' class='w3-button w3-blue' style='$font;'>Alterar</a></td> 
 
@@ -578,6 +578,10 @@ public function PesquisarLivroParaTrocar($info){
          $idade = $linha2['idadeLivro'];
          $estado = $linha2['estadoConservacaoLivro'];
          $genero = $linha2['generoLivro'];
+         
+         echo "<script>
+             window.alert('Testando');
+             </script>";
          
          echo "<form class='w3-container' action='acoes/enviandoSolicitacaoLivro.php' method='POST'>";
         echo "<table class='w3-table' border='2'>";
