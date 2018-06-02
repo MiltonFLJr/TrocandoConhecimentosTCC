@@ -3,25 +3,10 @@
 <head>    
 <title>Cadastrar livro</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="css/w3.css">
-    <link rel="stylesheet" type="text/css" href="css/custom.css">
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+    <link rel="stylesheet" type="text/css" href="../css/custom.css">
 
 <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
-
-<!-- ARQUIVOS DE PERSONALIZAÇAO -->
-	<link rel="stylesheet" type="text/css" href="outros/vendor/bootstrap/css/bootstrap.min.css">
-
-	<link rel="stylesheet" type="text/css" href="outros/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-
-	<link rel="stylesheet" type="text/css" href="outros/vendor/animate/animate.css">
-
-	<link rel="stylesheet" type="text/css" href="outros/vendor/select2/select2.min.css">
-
-	<link rel="stylesheet" type="text/css" href="outros/vendor/perfect-scrollbar/perfect-scrollbar.css">
-
-	<link rel="stylesheet" type="text/css" href="outros/css/util.css">
-	<link rel="stylesheet" type="text/css" href="outros/css/main.css">
-	<!-- ARQUIVOS DE PERSONALIZAÇAO -->
     </head>    
     
 <body>
@@ -51,7 +36,7 @@
  <div class="w3-bar w3-black w3-border-4 w3-mobile w3-card-4 w3-large w3-hide-small w3-hide-medium">
 
      <a href="index.html" class="w3schools-logo w3-left">
-     <img class="w3-image" hegiht="50" width="60" src="imgs/logo.png"> 
+     <img class="w3-image" hegiht="50" width="60" src="../imgs/logo.png"> 
      </a>     
      
          
@@ -68,7 +53,7 @@
   <button onclick="myFunction2()" class="w3-button w3-black" style="font-family: 'Alfa Slab One', cursive;">Livros ▼</button>
   <div id="Demo2" class="w3-dropdown-content w3-bar-block w3-border" style="width:210px;" >
       <a href="cadastrarlivro.php" class="w3-bar-item w3-button">Cadastrar livros</a>
-   <a href="meuslivroscadastrados.php" class="w3-bar-item w3-button">Meus livros</a>
+   <a href="#" class="w3-bar-item w3-button">Meus livros</a>
   </div>
 </div>
 
@@ -76,7 +61,7 @@
   <button onclick="myFunction3()" class="w3-button w3-black" style="font-family: 'Alfa Slab One', cursive;">Trocas ▼</button>
   <div id="Demo3" class="w3-dropdown-content w3-bar-block w3-border">
     <a href="#" class="w3-bar-item w3-button">Solicitaçoes enviadas</a>
-    <a href="solicitacoespendentestroca.php" class="w3-bar-item w3-button">Solicitaçoes recebidas</a>
+    <a href="#" class="w3-bar-item w3-button">Solicitaçoes recebidas</a>
     <a href="#" class="w3-bar-item w3-button">Historico</a>
   </div>
 </div>
@@ -138,7 +123,7 @@
   <button onclick="myFunction5()" class="w3-button w3-center" style="font-family: 'Alfa Slab One', cursive;background-color:#2B2B2B;">Livros ▼</button>
   <div id="Demo5" class="w3-dropdown-content w3-bar-block w3-border" style="width:210px;" >
     <a href="cadastrarlivro.php" class="w3-bar-item w3-button">Cadastrar livros</a>
-   <a href="meuslivroscadastrados.php" class="w3-bar-item w3-button">Meus livros</a>
+   <a href="#" class="w3-bar-item w3-button">Meus livros</a>
   </div>
 </div>
    
@@ -146,9 +131,9 @@
         <div class="w3-dropdown-click">
   <button onclick="myFunction6()" class="w3-button w3-center" style="font-family: 'Alfa Slab One', cursive;background-color:#2B2B2B;">Trocas ▼</button>
   <div id="Demo6" class="w3-dropdown-content w3-bar-block w3-border">
-    <a href="solicitacoestrocaenviadas.php" class="w3-bar-item w3-button">Solicitaçoes enviadas</a>
-    <a href=solicitacoespendentestroca.php" class="w3-bar-item w3-button">Solicitaçoes recebidas</a>
-    <a href="historicodetrocas.php" class="w3-bar-item w3-button">Historico</a>
+    <a href="#" class="w3-bar-item w3-button">Solicitaçoes enviadas</a>
+    <a href="#" class="w3-bar-item w3-button">Solicitaçoes recebidas</a>
+    <a href="#" class="w3-bar-item w3-button">Historico</a>
   </div>
 </div>
 
@@ -195,26 +180,22 @@
     </div>
   </div>
 
-<p class="w3-responsive w3-center w3-large" style="font-family: 'Alfa Slab One', cursive;">SOLICITAÇÕES DE TROCA ENVIADAS</p>
-  
-
   <!-- CÓNTEÚDO DA PÁGINA - INÍCIO -->
- 
-   <?php
-        
-       require_once('./classes/TrocaLivro.php');
-        
-   $livro = new TrocaLivro();
+  
+     <br class="w3-hide-large">
+  <br class="w3-hide-large">
+ <br class="w3-hide-large">
+   <br class="w3-hide-large">
    
-   $livro->exibirSolicitacoesEnviadas();
-        
-        ?>
-
+   <br class="w3-hide-medium w3-hide-small">
+   <br class="w3-hide-medium w3-hide-small">
+   
+   <div class="w3-container w3-bar w3-blue w3-center">
+       <p style="font-family: 'Alfa Slab One', cursive;">Solicitação já enviada antes, escolha outro livro para propor uma troca. </p>
+   </div>
+  
    <!-- CÓNTEÚDO DA PÁGINA - FIM -->
    
-<br>
-<br>
-<br>
 <br>
 <br>
 <br>
@@ -346,13 +327,5 @@ function myFunction6() {
 </script>
 <!-- DROPDOWN 6 -->
 
-	<script src="outros/vendor/jquery/jquery-3.2.1.min.js"></script>
-
-	<script src="outros/vendor/bootstrap/js/popper.js"></script>
-	<script src="outros/vendor/bootstrap/js/bootstrap.min.js"></script>
-
-	<script src="outros/vendor/select2/select2.min.js"></script>
-
-	<script src="outros/js/main.js"></script>
 </body>
 </html> 

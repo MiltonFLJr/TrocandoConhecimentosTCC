@@ -98,43 +98,46 @@
     <h4 class="w3-hide-medium" style="font-family: 'Alfa Slab One', cursive;">Cadastrar</h4>
      </div>   
 
+    
+     
     <form enctype="multipart/form-data" class="w3-container w3-hide-medium w3-mobile" method="POST" action="acoes/cadastrandoUsuario.php">
    
-  <p> <label class="w3-text-black w3-mobile"><b>Avatar:</b></label></p>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" name="image" type="file" style="width: 260px;"></p>
+        
+        <p> <label class="w3-text-black w3-mobile"><b>Avatar <span class="w3-text-red">*</span></b></label></p>
+       <p> <input  required  class="w3-center w3-input w3-border w3-light-grey w3-mobile" name="image" type="file" style="width: 260px;"></p>
 
 
-   <p> <label class="w3-text-black w3-mobile"><b>CPF:</b></label></p>
-      <p>  <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" name="cpf" type="text" style="width: 260px;"></p>
+   <p> <label class="w3-text-black w3-mobile"><b>CPF<span class="w3-text-red">*</span></b></label></p>
+      <p>  <input required  maxlength="11" class="w3-center w3-input w3-border w3-light-grey w3-mobile" name="cpf" type="text" style="width: 260px;"></p>
 
-<p><label class="w3-text-black  w3-mobile"><b>RG:</b></label></p>
-        <p><input class="w3-center w3-input w3-border w3-light-grey  w3-mobile" name="rg" type="text" style="width: 260px;">
+<p><label class="w3-text-black  w3-mobile"><b>RG<span class="w3-text-red">*</span></b></label></p>
+        <p><input maxlength="9" required  class="w3-center w3-input w3-border w3-light-grey  w3-mobile" name="rg" type="text" style="width: 260px;">
 
-        <p><label class="w3-text-black  w3-mobile"><b>Nome:</b></label>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey  w3-mobile" name="nome" type="text" style="width: 260px;"></p>
+        <p><label class="w3-text-black  w3-mobile"><b>Nome<span class="w3-text-red">*</span></b></label>
+       <p> <input maxlength="40" required  class="w3-center w3-input w3-border w3-light-grey  w3-mobile" name="nome" type="text" style="width: 260px;"></p>
 
-<p><label class="w3-text-black w3-mobile"><b>Data de nascimento:</b></label></p>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" name="dtn" style="width: 260px;"></p>
-
-
-<p><label class="w3-text-black  w3-mobile"><b>Telefone:</b></label></p>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey  w3-mobile" type="text" name="telefone" style="width: 260px;"></p>
-
-        <p><label class="w3-text-black"><b>Endereço:</b></label></p>
-      <p>  <input class="w3-center w3-input w3-border w3-light-grey  w3-mobile" type="text" name="endereco" style="width: 260px;"></p>
+<p><label class="w3-text-black w3-mobile"><b>Data de nascimento<span class="w3-text-red">*</span></b></label></p>
+       <p> <input required  class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="date" name="dtn" style="width: 260px;"></p>
 
 
-<p> <label class="w3-text-black w3-mobile"><b>Nome da mae:</b></label></p>
-        <p> <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" name="nomemae" style="width: 260px;"></p>
+<p><label class="w3-text-black  w3-mobile"><b>Telefone<span class="w3-text-red">*</span></b></label></p>
+       <p> <input maxlength="11" required  class="w3-center w3-input w3-border w3-light-grey  w3-mobile" type="text" name="telefone" style="width: 260px;"></p>
 
-<p> <label class="w3-text-black w3-mobile"><b>Nome do pai:</b></label></p>
-         <p><input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" name="nomepai" style="width: 260px;"></p>
+        <p><label class="w3-text-black"><b>Endereço<span class="w3-text-red">*</span></b></label></p>
+      <p>  <input maxlength="50" required  class="w3-center w3-input w3-border w3-light-grey  w3-mobile" type="text" name="endereco" style="width: 260px;"></p>
 
-<p> <label class="w3-text-black w3-mobile"><b>E-mail:</b></label></p>
-        <p><input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" name="email" style="width: 260px;"></p>
 
-        <p> <label class="w3-text-black w3-mobile"><b>Senha:</b></label></p>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" name="senha" type="password" style="width: 260px;"></p>
+<p> <label class="w3-text-black w3-mobile"><b>Nome da mae<span class="w3-text-red">*</span></b></label></p>
+        <p> <input maxlength="30" required  class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" name="nomemae" style="width: 260px;"></p>
+
+<p> <label class="w3-text-black w3-mobile"><b>Nome do pai<span class="w3-text-red">*</span></b></label></p>
+         <p><input maxlength="30" required  class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" name="nomepai" style="width: 260px;"></p>
+
+<p> <label class="w3-text-black w3-mobile"><b>E-mail<span class="w3-text-red">*</span></b></label></p>
+        <p><input maxlength="100" required  class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" name="email" style="width: 260px;"></p>
+
+        <p> <label class="w3-text-black w3-mobile"><b>Senha<span class="w3-text-red">*</span></b></label></p>
+       <p> <input maxlength="100" required class="w3-center w3-input w3-border w3-light-grey w3-mobile" name="senha" type="password" style="width: 260px;"></p>
 
        <p> <input type="submit" class="w3-input w3-button w3-blue w3-mobile" value="Enviar" style="width:160px;position:relative;right:-50px;font-family: 'Alfa Slab One', cursive;"></p>
 
@@ -158,41 +161,41 @@
 
         <form enctype="multipart/form-data" class="w3-container w3-mobile" method="POST" action="acoes/cadastrandoUsuario.php">
    
-   <p> <label class="w3-text-black w3-mobile"><b>Avatar:</b></label></p>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" name="image" type="file" style="width: 260px;"></p>
+   <p> <label class="w3-text-black w3-mobile"><b>Avatar<span class="w3-text-red">*</span></b></label></p>
+       <p> <input required class="w3-center w3-input w3-border w3-light-grey w3-mobile" name="image" type="file" style="width: 260px;"></p>
 
 
-   <p> <label class="w3-text-black w3-mobile"><b>CPF:</b></label></p>
-      <p>  <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" name="cpf" type="text" style="width: 260px;"></p>
+   <p> <label class="w3-text-black w3-mobile"><b>CPF<span class="w3-text-red">*</span></b></label></p>
+      <p>  <input maxlength="11" required class="w3-center w3-input w3-border w3-light-grey w3-mobile" name="cpf" type="text" style="width: 260px;"></p>
 
-<p><label class="w3-text-black  w3-mobile"><b>RG:</b></label></p>
-        <p><input class="w3-center w3-input w3-border w3-light-grey  w3-mobile" name="rg" type="text" style="width: 260px;">
+<p><label class="w3-text-black  w3-mobile"><b>RG<span class="w3-text-red">*</span></b></label></p>
+        <p><input maxlength="9" required class="w3-center w3-input w3-border w3-light-grey  w3-mobile" name="rg" type="text" style="width: 260px;">
 
-        <p><label class="w3-text-black  w3-mobile"><b>Nome:</b></label>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey  w3-mobile" name="nome" type="text" style="width: 260px;"></p>
+        <p><label class="w3-text-black  w3-mobile"><b>Nome<span class="w3-text-red">*</span></b></label>
+       <p> <input maxlength="40" required class="w3-center w3-input w3-border w3-light-grey  w3-mobile" name="nome" type="text" style="width: 260px;"></p>
 
-<p><label class="w3-text-black w3-mobile"><b>Data de nascimento:</b></label></p>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" name="dtn" style="width: 260px;"></p>
-
-
-<p><label class="w3-text-black  w3-mobile"><b>Telefone:</b></label></p>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey  w3-mobile" type="text" name="telefone" style="width: 260px;"></p>
-
-        <p><label class="w3-text-black"><b>Endereço:</b></label></p>
-      <p>  <input class="w3-center w3-input w3-border w3-light-grey  w3-mobile" type="text" name="endereco" style="width: 260px;"></p>
+<p><label class="w3-text-black w3-mobile"><b>Data de nascimento<span class="w3-text-red">*</span></b></label></p>
+       <p> <input required class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="date" name="dtn" style="width: 260px;"></p>
 
 
-<p> <label class="w3-text-black w3-mobile"><b>Nome da mae:</b></label></p>
-        <p> <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" name="nomemae" style="width: 260px;"></p>
+<p><label class="w3-text-black  w3-mobile"><b>Telefone<span class="w3-text-red">*</span></b></label></p>
+       <p> <input maxlength="11" required class="w3-center w3-input w3-border w3-light-grey  w3-mobile" type="text" name="telefone" style="width: 260px;"></p>
 
-<p> <label class="w3-text-black w3-mobile"><b>Nome do pai:</b></label></p>
-         <p><input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" name="nomepai" style="width: 260px;"></p>
+        <p><label class="w3-text-black"><b>Endereço<span class="w3-text-red">*</span></b></label></p>
+      <p>  <input maxlength="50" required class="w3-center w3-input w3-border w3-light-grey  w3-mobile" type="text" name="endereco" style="width: 260px;"></p>
 
-<p> <label class="w3-text-black w3-mobile"><b>E-mail:</b></label></p>
-        <p><input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" name="email" style="width: 260px;"></p>
 
-        <p> <label class="w3-text-black w3-mobile"><b>Senha:</b></label></p>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" name="senha" type="password" style="width: 260px;"></p>
+<p> <label class="w3-text-black w3-mobile"><b>Nome da mae<span class="w3-text-red">*</span></b></label></p>
+        <p> <input maxlength="30" required class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" name="nomemae" style="width: 260px;"></p>
+
+<p> <label class="w3-text-black w3-mobile"><b>Nome do pai<span class="w3-text-red">*</span></b></label></p>
+         <p><input maxlength="30" required class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" name="nomepai" style="width: 260px;"></p>
+
+<p> <label class="w3-text-black w3-mobile"><b>E-mail<span class="w3-text-red">*</span></b></label></p>
+        <p><input maxlength="100" required class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" name="email" style="width: 260px;"></p>
+
+        <p> <label class="w3-text-black w3-mobile"><b>Senha<span class="w3-text-red">*</span></b></label></p>
+       <p> <input maxlength="100" required class="w3-center w3-input w3-border w3-light-grey w3-mobile" name="senha" type="password" style="width: 260px;"></p>
 
        <p> <input type="submit" class="w3-input w3-button w3-blue" value="Enviar" style="width:160px;position:relative;right:-50px;font-family: 'Alfa Slab One', cursive;"></p>
 
@@ -217,41 +220,41 @@
 
      <form enctype="multipart/form-data" class="w3-container w3-hide-medium w3-mobile" method="POST" action="acoes/cadastrandoUsuario.php">
    
-  <p> <label class="w3-text-black w3-mobile"><b>Avatar:</b></label></p>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" name="image" type="file" style="width: 260px;"></p>
+  <p> <label class="w3-text-black w3-mobile"><b>Avatar<span class="w3-text-red">*</span></b></label></p>
+       <p> <input required class="w3-center w3-input w3-border w3-light-grey w3-mobile" name="image" type="file" style="width: 260px;"></p>
 
 
-   <p> <label class="w3-text-black w3-mobile"><b>CPF:</b></label></p>
-      <p>  <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" name="cpf" type="text" style="width: 260px;"></p>
+   <p> <label class="w3-text-black w3-mobile"><b>CPF<span class="w3-text-red">*</span></b></label></p>
+      <p>  <input maxlength="11" required class="w3-center w3-input w3-border w3-light-grey w3-mobile" name="cpf" type="text" style="width: 260px;"></p>
 
-<p><label class="w3-text-black  w3-mobile"><b>RG:</b></label></p>
-        <p><input class="w3-center w3-input w3-border w3-light-grey  w3-mobile" name="rg" type="text" style="width: 260px;">
+<p><label class="w3-text-black  w3-mobile"><b>RG<span class="w3-text-red">*</span></b></label></p>
+        <p><input maxlength="9" required class="w3-center w3-input w3-border w3-light-grey  w3-mobile" name="rg" type="text" style="width: 260px;">
 
-        <p><label class="w3-text-black  w3-mobile"><b>Nome:</b></label>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey  w3-mobile" name="nome" type="text" style="width: 260px;"></p>
+        <p><label class="w3-text-black  w3-mobile"><b>Nome<span class="w3-text-red">*</span></b></label>
+       <p> <input maxlength="40" required class="w3-center w3-input w3-border w3-light-grey  w3-mobile" name="nome" type="text" style="width: 260px;"></p>
 
-<p><label class="w3-text-black w3-mobile"><b>Data de nascimento:</b></label></p>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" name="dtn" style="width: 260px;"></p>
-
-
-<p><label class="w3-text-black  w3-mobile"><b>Telefone:</b></label></p>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey  w3-mobile" type="text" name="telefone" style="width: 260px;"></p>
-
-        <p><label class="w3-text-black"><b>Endereço:</b></label></p>
-      <p>  <input class="w3-center w3-input w3-border w3-light-grey  w3-mobile" type="text" name="endereco" style="width: 260px;"></p>
+<p><label class="w3-text-black w3-mobile"><b>Data de nascimento<span class="w3-text-red">*</span></b></label></p>
+       <p> <input required class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="date" name="dtn" style="width: 260px;"></p>
 
 
-<p> <label class="w3-text-black w3-mobile"><b>Nome da mae:</b></label></p>
-        <p> <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" name="nomemae" style="width: 260px;"></p>
+<p><label class="w3-text-black  w3-mobile"><b>Telefone<span class="w3-text-red">*</span></b></label></p>
+       <p> <input maxlength="11" required class="w3-center w3-input w3-border w3-light-grey  w3-mobile" type="text" name="telefone" style="width: 260px;"></p>
 
-<p> <label class="w3-text-black w3-mobile"><b>Nome do pai:</b></label></p>
-         <p><input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" name="nomepai" style="width: 260px;"></p>
+        <p><label class="w3-text-black"><b>Endereço<span class="w3-text-red">*</span></b></label></p>
+      <p>  <input maxlength="50" required class="w3-center w3-input w3-border w3-light-grey  w3-mobile" type="text" name="endereco" style="width: 260px;"></p>
 
-<p> <label class="w3-text-black w3-mobile"><b>E-mail:</b></label></p>
-        <p><input class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" name="email" style="width: 260px;"></p>
 
-        <p> <label class="w3-text-black w3-mobile"><b>Senha:</b></label></p>
-       <p> <input class="w3-center w3-input w3-border w3-light-grey w3-mobile" name="senha" type="password" style="width: 260px;"></p>
+<p> <label class="w3-text-black w3-mobile"><b>Nome da mae<span class="w3-text-red">*</span></b></label></p>
+        <p> <input maxlength="30" required class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" name="nomemae" style="width: 260px;"></p>
+
+<p> <label class="w3-text-black w3-mobile"><b>Nome do pai<span class="w3-text-red">*</span></b></label></p>
+         <p><input maxlength="30" required class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" name="nomepai" style="width: 260px;"></p>
+
+<p> <label class="w3-text-black w3-mobile"><b>E-mail<span class="w3-text-red">*</span></b></label></p>
+        <p><input maxlength="100" required class="w3-center w3-input w3-border w3-light-grey w3-mobile" type="text" name="email" style="width: 260px;"></p>
+
+        <p> <label class="w3-text-black w3-mobile"><b>Senha<span class="w3-text-red">*</span></b></label></p>
+       <p> <input maxlength="100" required class="w3-center w3-input w3-border w3-light-grey w3-mobile" name="senha" type="password" style="width: 260px;"></p>
 
        <p> <input type="submit" class="w3-input w3-button w3-blue" value="Enviar" style="width:160px;position:relative;right:-50px;font-family: 'Alfa Slab One', cursive;"></p>
 

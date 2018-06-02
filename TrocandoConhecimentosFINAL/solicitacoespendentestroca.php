@@ -60,9 +60,9 @@
 <div class="w3-dropdown-click">
   <button onclick="myFunction3()" class="w3-button w3-black" style="font-family: 'Alfa Slab One', cursive;">Trocas ▼</button>
   <div id="Demo3" class="w3-dropdown-content w3-bar-block w3-border">
-    <a href="#" class="w3-bar-item w3-button">Solicitaçoes enviadas</a>
+    <a href="solicitacoestrocaenviadas.php" class="w3-bar-item w3-button">Solicitaçoes enviadas</a>
     <a href="solicitacoespendentestroca.php" class="w3-bar-item w3-button">Solicitaçoes recebidas</a>
-    <a href="#" class="w3-bar-item w3-button">Historico</a>
+    <a href="historicodetrocas.php" class="w3-bar-item w3-button">Historico</a>
   </div>
 </div>
 
@@ -131,9 +131,9 @@
         <div class="w3-dropdown-click">
   <button onclick="myFunction6()" class="w3-button w3-center" style="font-family: 'Alfa Slab One', cursive;background-color:#2B2B2B;">Trocas ▼</button>
   <div id="Demo6" class="w3-dropdown-content w3-bar-block w3-border">
-    <a href="#" class="w3-bar-item w3-button">Solicitaçoes enviadas</a>
-    <a href=solicitacoespendentestroca.php" class="w3-bar-item w3-button">Solicitaçoes recebidas</a>
-    <a href="#" class="w3-bar-item w3-button">Historico</a>
+    <a href="solicitacoestrocaenviadas" class="w3-bar-item w3-button">Solicitaçoes enviadas</a>
+    <a href="solicitacoespendentestroca.php" class="w3-bar-item w3-button">Solicitaçoes recebidas</a>
+    <a href="historicodetrocas" class="w3-bar-item w3-button">Historico</a>
   </div>
 </div>
 

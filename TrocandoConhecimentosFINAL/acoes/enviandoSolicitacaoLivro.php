@@ -11,6 +11,22 @@ require_once(__DIR__.'/../classes/TrocaLivro.php');;
 
 $nomeBook =$_POST['nomeLivro'];
 $cdLivro =$_POST['cd'];
+
+//VERIFICANDO SE UMA SOLICITAÇÃO JA NÃO FOI ENVIADA 
+
+$statement = $con->prepare("SELECT cdLivro,nmLivro,nomeUsuario FROM troca_livro WHERE cdLivro=? AND nmLivro=? AND nomeUsuario=?");
+
+$statement->bindParam(1,$cdLivro);
+$statement->bindParam(2,$nomeBook);
+$statement->bindParam(3,$_SESSION['nome']);
+$statement->execute();
+
+$livros = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+ if( count($livros) <= 0)
+ {
+// VERIFICANDO SE UMA SOLICITAÇÃO JA NÃO FOI ENVIADA 
+
 $solicitacaotroca = new TrocaLivro();
 
 $solicitacaotroca->cadastrarTrocaLivro($nomeBook,$cdLivro);
@@ -42,5 +58,7 @@ $solicitacaotroca->cadastrarTrocaLivro($nomeBook,$cdLivro);
    
 
 // echo header('location:TELALGDmeusLivros.php');
- 
+}else{
+    header('location:../acoes/erroSolicitacaoRepetida.php');
+}
 ?>

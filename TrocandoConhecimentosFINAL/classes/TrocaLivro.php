@@ -9,7 +9,7 @@ class TrocaLivro extends LivroTrocaLivro {
     public function cadastrarTrocaLivro($nomeLivro,$cdBook){
         
         
-        $pendente="pendente";
+        $pendente="Pendente";
         
         include 'conexao.php';
         
@@ -111,6 +111,8 @@ class TrocaLivro extends LivroTrocaLivro {
    
    while($linha = $stmt->fetch(PDO::FETCH_ASSOC)){
        
+        $font = "font-family:Alfa Slab One, cursive";
+        
        $pendente = "Pendente";
        
        $stmt2 = $con->prepare("SELECT nomeLivro FROM livro WHERE cdLivro=? ");
@@ -134,23 +136,23 @@ class TrocaLivro extends LivroTrocaLivro {
         echo "<table class='w3-table' border='2' id='customers'>";
         echo "<tr>";
         
-        echo "<th>";
+        echo "<th class='w3-black w3-text-white w3-center' style='$font;'>";
         echo "Meu Livro";
         echo "</th>";
         
-         echo "<th>";
+         echo "<th class='w3-black w3-text-white w3-center' style='$font;'>";
         echo "Livro Oferecido";
         echo "</th>";
         
-           echo "<th>";
+           echo "<th class='w3-black w3-text-white w3-center' style='$font;'>";
         echo "Status";
         echo "</th>";
         
-        echo "<th>";
+        echo "<th class='w3-black w3-text-white w3-center' style='$font;'>";
         echo "Ação";
         echo "</th>";
         
-        echo "<th>";
+        echo "<th class='w3-black w3-text-white w3-center' style='$font;'>";
         echo "Ação";
         echo "</th>";
         
@@ -161,26 +163,26 @@ class TrocaLivro extends LivroTrocaLivro {
         $cdTcL = $linha3['cdTrocaLivro'];
         echo "<input type='hidden' name='cdTrocaLivro' value='$cdTcL'>";
 
-        echo "<td>";
+        echo "<td class='w3-center'>";
         echo $linha3['nmLivro'];
         echo "</td>";
         
         $booko = $linha3['nomeLivroOferecido'];
         
-        echo "<td>";
+        echo "<td class='w3-center'>";
         echo $linha3['nomeLivroOferecido'];
         echo "<input type='hidden' name='livrooferecido' value='$booko'>";
         echo "</td>";
         
-         echo "<td>";
+         echo "<td class='w3-center'>";
         echo $linha3['statusTroca'];
         echo "</td>";
         
-        echo "<td>";
+        echo "<td class='w3-center'>";
         echo "<button type='submit' class='form-control' value='Aceito' name='sub'>Aceitar</button>";
         echo "</td>";
         
-            echo "<td>";
+            echo "<td class='w3-center'>";
         echo "<button type='submit' class='form-control' value='Recusado' name='sub' >Recusar</button>";
         echo "</td>";
         
@@ -208,7 +210,7 @@ class TrocaLivro extends LivroTrocaLivro {
       
       include 'conexao.php';
            
-         $pendente = "pendente";
+         $pendente = "Pendente";
       
       $stmt3 = $con->prepare("SELECT * FROM troca_livro WHERE cdTrocaLivro=?");
       
@@ -272,6 +274,8 @@ class TrocaLivro extends LivroTrocaLivro {
       
       require_once('conexao.php');
       
+       $pendente = "Pendente";
+       
       $font = "font-family:Alfa Slab One, cursive"; 
       
         $_SESSION['nome'];
@@ -290,10 +294,11 @@ class TrocaLivro extends LivroTrocaLivro {
           $cdl = $linha['cdLivro'];
           $cdu = $linha['cdUsuario'];
           
-          $stmt2 = $con->prepare("SELECT * FROM troca_livro WHERE cdLivro=? AND cdUsuario=?");
+          $stmt2 = $con->prepare("SELECT * FROM troca_livro WHERE cdLivro=? AND cdUsuario=? AND statusTroca=?");
           
           $stmt2->bindParam(1,$linha['cdLivro']);
           $stmt2->bindParam(2,$linha['cdUsuario']);
+            $stmt2->bindParam(3,$pendente);
           $stmt2->execute();
       
           while($linha2 = $stmt2->fetch(PDO::FETCH_ASSOC)){

@@ -379,7 +379,7 @@ public function consultarMeuLivro(){
         $stmt2->execute();
         
         while($linha2 = $stmt2->fetch(PDO::FETCH_ASSOC)){
- 
+        
              $nome = $linha2['nomeLivro'];
          $cdLivro = $linha2['cdLivro'];   
          $capa = $linha2['capa'];   
@@ -388,13 +388,12 @@ public function consultarMeuLivro(){
          $estado = $linha2['estadoConservacaoLivro'];
          $genero = $linha2['generoLivro'];
          
-         echo"
- 
+         echo"<div class='w3-container'>  
+             <table class='w3-table' border='2'>
       <form method='POST' action='../TrocandoConhecimentosFINAL/acoes/excluindoLivro.php'>
     <input type='hidden' name='cd' value='$cdLivro'>
-        
-      <div class='w3-container'>
-   <table class='w3-table' border='2'>
+         
+
 <tr>
 <th class='w3-black w3-text-white w3-center' style='$font;'>Capa</th>
 <th class='w3-black w3-text-white w3-center' style='$font;'>Nome</th>
@@ -405,7 +404,8 @@ public function consultarMeuLivro(){
 <th class='w3-black w3-text-white w3-center w3-resposnsive' style='font-family: $font;'> </th>
 <th class='w3-black w3-text-white w3-center w3-resposnsive' style='font-family: '$font;'> </th>
 </tr>
-
+        
+       
 <tr>
   <td class='w3-light-gray w3-hover-blue w3-hide-small w3-hide-medium w3-resposnsive'>
     <img class='w3-image w3-center' width='100' src='capaslivros/$capa'>
@@ -437,8 +437,9 @@ public function consultarMeuLivro(){
 </tr>
 
    </table>
- </div>
+
 </form>
+ </div>
 ";
 
             
