@@ -21,7 +21,7 @@
 <div class="w3-top">       
  <div class="w3-bar w3-black w3-border-4 w3-mobile w3-card-4 w3-large w3-hide-small w3-hide-medium">
 
-     <a href="index.php" class="w3schools-logo w3-left">
+     <a href="#" class="w3schools-logo w3-left">
      <img class="w3-image" hegiht="50" width="60" src="imgs/logo.png"> 
      </a>     
      

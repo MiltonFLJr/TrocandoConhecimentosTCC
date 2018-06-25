@@ -43,26 +43,26 @@
          <div class="w3-dropdown-click">
   <button onclick="myFunction()" class="w3-button w3-black" style="font-family: 'Alfa Slab One', cursive;">Conta ▼</button>
   <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border">
-    <a href="alterardados.php" class="w3-bar-item w3-button">Alterar dados pessoais</a>
+    <a href="../alterardados.php" class="w3-bar-item w3-button">Alterar dados pessoais</a>
     <a href="#" class="w3-bar-item w3-button">Alterar e-mail e senha</a>
-    <a href="excluirconta.php" class="w3-bar-item w3-button">Excluir conta</a>
+    <a href="../excluirconta.php" class="w3-bar-item w3-button">Excluir conta</a>
   </div>
 </div>
 
 <div class="w3-dropdown-click">
   <button onclick="myFunction2()" class="w3-button w3-black" style="font-family: 'Alfa Slab One', cursive;">Livros ▼</button>
   <div id="Demo2" class="w3-dropdown-content w3-bar-block w3-border" style="width:210px;" >
-      <a href="cadastrarlivro.php" class="w3-bar-item w3-button">Cadastrar livros</a>
-   <a href="#" class="w3-bar-item w3-button">Meus livros</a>
+      <a href="../cadastrarlivro.php" class="w3-bar-item w3-button">Cadastrar livros</a>
+   <a href="../meuslivroscadastrados.php" class="w3-bar-item w3-button">Meus livros</a>
   </div>
 </div>
 
 <div class="w3-dropdown-click">
   <button onclick="myFunction3()" class="w3-button w3-black" style="font-family: 'Alfa Slab One', cursive;">Trocas ▼</button>
   <div id="Demo3" class="w3-dropdown-content w3-bar-block w3-border">
-    <a href="#" class="w3-bar-item w3-button">Solicitaçoes enviadas</a>
-    <a href="#" class="w3-bar-item w3-button">Solicitaçoes recebidas</a>
-    <a href="#" class="w3-bar-item w3-button">Historico</a>
+    <a href="../solicitacoestrocaenviadas.php" class="w3-bar-item w3-button">Solicitaçoes enviadas</a>
+    <a href="../solicitacoespendentestroca.php" class="w3-bar-item w3-button">Solicitaçoes recebidas</a>
+    <a href="../historicodetrocas.php" class="w3-bar-item w3-button">Historico</a>
   </div>
 </div>
 
@@ -72,15 +72,37 @@
      </form>
      
    
-     <a href="acoes/encerrarSessao.php" class="w3-bar-tiem w3-button w3-mobile w3-right" style="font-family: 'Alfa Slab One', cursive;">Sair</a>
+     <a href="encerrarSessao.php" class="w3-bar-tiem w3-button w3-mobile w3-right" style="font-family: 'Alfa Slab One', cursive;">Sair</a>
      
 <a class="w3-right w3-hide-medium w3-hide-small">
      <i style="position:relative;top:10px;right:-3px;"> <?php print_r($_SESSION['nome']) ?> </i> 
      </a>     
 
        <a class="w3-right w3-hide-medium w3-hide-small">
-     <img class="w3-image" width="53" src="imgs/avatar.jpeg"> 
+
+     <?php 
+
+include '../conexao.php';
+
+$stmt = $con->prepare("SELECT avatar FROM usuario WHERE email=?");
+
+$stmt->bindParam(1,$_SESSION['email']);
+
+$stmt->execute();
+
+while($linha = $stmt->fetch(PDO::FETCH_ASSOC)){
+
+$avatar = $linha['avatar'];
+
+ echo"<img class='w3-image w3-center' width='50' src='../avatarusuarios/$avatar'>";
+
+}
+
+
+     ?>
+
      </a>     
+
 
     </div>   
     </div>
@@ -112,7 +134,7 @@
                 <div class="w3-dropdown-click">
   <button onclick="myFunction4()" class="w3-button w3-center" style="font-family: 'Alfa Slab One', cursive;background-color:#2B2B2B;">Conta ▼</button>
   <div id="Demo4" class="w3-dropdown-content w3-bar-block w3-border">
-      <a href="alterardados.php" class="w3-bar-item w3-button">Alterar dados pessoais</a>
+      <a href="../alterardados.php" class="w3-bar-item w3-button">Alterar dados pessoais</a>
     <a href="#" class="w3-bar-item w3-button">Alterar e-mail e senha</a>
     <a href="excluirconta.php" class="w3-bar-item w3-button">Excluir conta</a>
   </div>
@@ -123,7 +145,7 @@
   <button onclick="myFunction5()" class="w3-button w3-center" style="font-family: 'Alfa Slab One', cursive;background-color:#2B2B2B;">Livros ▼</button>
   <div id="Demo5" class="w3-dropdown-content w3-bar-block w3-border" style="width:210px;" >
     <a href="cadastrarlivro.php" class="w3-bar-item w3-button">Cadastrar livros</a>
-   <a href="#" class="w3-bar-item w3-button">Meus livros</a>
+   <a href="meuslivroscadastrados.php" class="w3-bar-item w3-button">Meus livros</a>
   </div>
 </div>
    
@@ -187,6 +209,7 @@
  <br class="w3-hide-large">
    <br class="w3-hide-large">
    
+   <br class="w3-hide-medium w3-hide-small">
    <br class="w3-hide-medium w3-hide-small">
    <br class="w3-hide-medium w3-hide-small">
    

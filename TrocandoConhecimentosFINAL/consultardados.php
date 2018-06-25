@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>    
-<title>Cadastrar livro</title>
+<title>Consultar dados pessoais</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css/w3.css">
     <link rel="stylesheet" type="text/css" href="css/custom.css">
@@ -10,7 +10,7 @@
     </head>    
     
 <body>
-    
+
    <?php
     
   
@@ -51,7 +51,7 @@
 <div class="w3-dropdown-click">
   <button onclick="myFunction2()" class="w3-button w3-black" style="font-family: 'Alfa Slab One', cursive;">Livros ▼</button>
   <div id="Demo2" class="w3-dropdown-content w3-bar-block w3-border" style="width:210px;" >
-    <a href="#" class="w3-bar-item w3-button">Cadastrar livros</a>
+      <a href="cadastrarlivro.php" class="w3-bar-item w3-button">Cadastrar livros</a>
    <a href="meuslivroscadastrados.php" class="w3-bar-item w3-button">Meus livros</a>
   </div>
 </div>
@@ -74,12 +74,11 @@
      <a href="acoes/encerrarSessao.php" class="w3-bar-tiem w3-button w3-mobile w3-right" style="font-family: 'Alfa Slab One', cursive;">Sair</a>
      
 <a class="w3-right w3-hide-medium w3-hide-small">
-     <i style="position:relative;top:10px;right:-3px;"> <?php print_r($_SESSION['nome']) ?> </i> 
+     <i style="position:relative;top:10px;right:-3px;"> <?php print_r($_SESSION['nome']) ?>  </i> 
      </a>     
 
        <a class="w3-right w3-hide-medium w3-hide-small">
-     
-     <?php 
+    <?php 
 
 include 'conexao.php';
 
@@ -112,8 +111,7 @@ $avatar = $linha['avatar'];
          
 
           <a class="w3-left w3-hide-large">
-     
-<?php 
+    <?php 
 
 include 'conexao.php';
 
@@ -133,7 +131,7 @@ $avatar = $linha['avatar'];
 
 
      ?>
-     
+
      </a>     
 
          <a class="w3-bar-item w3-left w3-hide-large">
@@ -153,8 +151,8 @@ $avatar = $linha['avatar'];
                 <div class="w3-dropdown-click">
   <button onclick="myFunction4()" class="w3-button w3-center" style="font-family: 'Alfa Slab One', cursive;background-color:#2B2B2B;">Conta ▼</button>
   <div id="Demo4" class="w3-dropdown-content w3-bar-block w3-border">
-       <a href="consultardados.php" class="w3-bar-item w3-button">Consultar dados pessoais</a>
-      <a href="alterardados.php" class="w3-bar-item w3-button">Alterar dados pessoais</a>
+      <a href="consultardados.php" class="w3-bar-item w3-button">Consultar dados pessoais</a>
+    <a href="alterardados.php" class="w3-bar-item w3-button">Alterar dados pessoais</a>
     <a href="excluirconta.php" class="w3-bar-item w3-button">Excluir conta</a>
   </div>
 </div>
@@ -164,7 +162,7 @@ $avatar = $linha['avatar'];
   <button onclick="myFunction5()" class="w3-button w3-center" style="font-family: 'Alfa Slab One', cursive;background-color:#2B2B2B;">Livros ▼</button>
   <div id="Demo5" class="w3-dropdown-content w3-bar-block w3-border" style="width:210px;" >
     <a href="#" class="w3-bar-item w3-button">Cadastrar livros</a>
-   <a href="meuslivroscadastrados.php" class="w3-bar-item w3-button">Meus livros</a>
+   <a href="#" class="w3-bar-item w3-button">Meus livros</a>
   </div>
 </div>
    
@@ -172,13 +170,13 @@ $avatar = $linha['avatar'];
         <div class="w3-dropdown-click">
   <button onclick="myFunction6()" class="w3-button w3-center" style="font-family: 'Alfa Slab One', cursive;background-color:#2B2B2B;">Trocas ▼</button>
   <div id="Demo6" class="w3-dropdown-content w3-bar-block w3-border">
-    <a href="solicitacoestrocaenviadas.php" class="w3-bar-item w3-button">Solicitaçoes enviadas</a>
-    <a href="solicitacoespendentestroca.php" class="w3-bar-item w3-button">Solicitaçoes recebidas</a>
-    <a href="historicodetrocas.php" class="w3-bar-item w3-button">Historico</a>
+    <a href="#" class="w3-bar-item w3-button">Solicitaçoes enviadas</a>
+    <a href="#" class="w3-bar-item w3-button">Solicitaçoes recebidas</a>
+    <a href="#" class="w3-bar-item w3-button">Historico</a>
   </div>
 </div>
 
-   <a href="acoes/encerrarSessao.php" class="w3-bar-item w3-button w3-mobile w3-center"  style="font-family: 'Alfa Slab One', cursive;">Sair</a>
+  <a href="acoes/encerrarSessao.php" class="w3-bar-item w3-button w3-mobile w3-center"  style="font-family: 'Alfa Slab One', cursive;">Sair</a>
             
    <form class="w3-bar-item w3-mobile" action="#">
      <input type="text" class="w3-bar-item w3-input w3-mobile" placeholder="Pesquisar livro..." style="padding:5px;" />
@@ -197,7 +195,9 @@ $avatar = $linha['avatar'];
     
     
     
-    
+    <!-- CADASTRO -->
+
+<!-- FORMULARIO PARA O DESKTOP -->
 
     <!--
 <br class="w3-hide-medium w3-hide-small">
@@ -221,138 +221,158 @@ $avatar = $linha['avatar'];
       </div>
     </div>
   </div>
-  
-<!-- CADASTRO -->
-  <!-- FORMULARIO PARA O DESKTOP -->
 
-  <?php  
-  
-  include 'conexao.php';
-        $font = 'Alfa Slab One';
-        $email = $_SESSION['email'];
+  <?php
         
-        $stmt= $con->prepare("SELECT cdUsuario FROM usuario WHERE email=?");
+         include('conexao.php');
+        
+        $font_style='Alfa Slab One';
+        $email = $_SESSION['email'];
+        $senha = $_SESSION['senha'];
+        
+        $stmt= $con->prepare("SELECT *  FROM usuario WHERE email=? AND senha=?");
         
         $stmt->bindParam(1,$email);
+        $stmt->bindParam(2,$senha);
         
         $stmt->execute();
         
         while($linha = $stmt->fetch(PDO::FETCH_ASSOC)){
             
-            $cdUsuario = $linha['cdUsuario'];
+            $cpf = $linha['cpfUsuario'];
+            $rg = $linha['rgUsuario'];
+            $nome = $linha['nomeUsuario'];
+            $dtn = $linha['dtNascimento'];
+            $telefone = $linha['telefone'];
+            $endereco = $linha['endereco'];
+            $nomeMae = $linha['nomeMae'];
+            $nomePai = $linha['nomePai'];
+            $emailbd = $linha['email'];
+            $senhabd = $linha['senha'];
+            $id = $linha['cdUsuario'];
+           $avatar = $linha['avatar'];
+           
+            //AVATAR
             
-            echo"
+              $avatar = $linha['avatar'];
+            $nome = $linha['nomeUsuario'];
+            
+            echo "
 <div class='w3-display-bottommiddle w3-light-grey w3-card-4 w3-center w3-hide-medium w3-hide-small' style='width: 290px;position: relative; top:20px;'>
     <div class='w3-container w3-blue w3-hide-medium w3-hide-small' style='width:290px;'>
-    <h4 class='w3-hide-medium' style='font-family: $font, cursive;'>Cadastrar livro</h4>
+    <h4 class='w3-hide-medium' style='font-family: $font_style, cursive;'>Dados pessoais</h4>
      </div>   
 
-    <form class='w3-container w3-hide-medium w3-mobile' action='__DIR__./../acoes/cadastrandoLivro.php' method='POST' enctype='multipart/form-data'    >
+    <form class='w3-container w3-hide-medium w3-mobile' method='POST' action='acoes/alterandoDados.php' enctype='multipart/form-data'>
    
-  <p> <label class='w3-text-black w3-mobile'><b>Capa<span class='w3-text-red'>*</span></b></label></p>
-       <p> <input required class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='file' name='image' style='width: 260px;'></p>
+     <input name='id' type='hidden' value='$id'>
 
-       <input type='hidden' placeholder='Codigo livro' name='cdUsuario' value='$cdUsuario' readonly>
-       
-       <input type='hidden' placeholder='Codigo livro' name='email' value='$email' readonly>
+<p><img class='w3-image w3-center' width='50' src='avatarusuarios/$avatar'></p> 
+    
+<p> <label class='w3-text-black w3-mobile'><b>Email</b></label></p>
+      <p>  <input readonly name='email' value='$emailbd' class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='text' style='width: 260px;'></p>
+         
+   <p> <label class='w3-text-black w3-mobile'><b>CPF:</b></label></p>
+      <p>  <input readonly name='cpf' value='$cpf' class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='text' style='width: 260px;'></p>
 
-   <p> <label class='w3-text-black w3-mobile'><b>Nome<span class='w3-text-red'>*</span></b></label></p>
-      <p>  <input required class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='text' name='nomeLivro' style='width: 260px;'></p>
+<p><label class='w3-text-black  w3-mobile'><b>RG:</b></label></p>
+        <p><input readonly name='rg' value='$rg' class='w3-center w3-input w3-border w3-light-grey  w3-mobile' type='text' style='width: 260px;'>
 
-<p><label class='w3-text-black  w3-mobile'><b>Autor<span class='w3-text-red'>*</span></b></label></p>
-        <p><input required class='w3-center w3-input w3-border w3-light-grey  w3-mobile' type='text' name='autorLivro' style='width: 260px;'>
+        <p><label class='w3-text-black  w3-mobile'><b>Nome:</b></label>
+       <p> <input readonly name='nome' value='$nome' class='w3-center w3-input w3-border w3-light-grey  w3-mobile' type='text' style='width: 260px;'></p>
 
-        <p><label class='w3-text-black  w3-mobile'><b>Tempo de uso<span class='w3-text-red'>*</span></b></label>
-       <p> <input required class='w3-center w3-input w3-border w3-light-grey  w3-mobile' type='text' name='idadeLivro' style='width: 260px;'></p>
-
-<p><label class='w3-text-black w3-mobile'><b>Estado de conservação<span class='w3-text-red'>*</span></b></label></p>
-       <p> <input required class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='text' name='estadoConservacao' style='width: 260px;'></p>
+<p><label class='w3-text-black w3-mobile'><b>Data de nascimento:</b></label></p>
+       <p> <input readonly name='dtn' value='$dtn' class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='text' style='width: 260px;'></p>
 
 
-<p><label class='w3-text-black  w3-mobile'><b>Genero<span class='w3-text-red'>*</span></b></label></p>
-       <p> <input required class='w3-center w3-input w3-border w3-light-grey  w3-mobile' type='text' name='genero' style='width: 260px;'></p>
+<p><label class='w3-text-black  w3-mobile'><b>Telefone:</b></label></p>
+       <p> <input readonly name='telefone' value='$telefone' class='w3-center w3-input w3-border w3-light-grey  w3-mobile' type='text' style='width: 260px;'></p>
 
-       <p> <input type='submit' class='w3-input w3-button w3-blue w3-mobile' value='Enviar' style='width:160px;position:relative;right:-50px;font-family: $font, cursive;'></p>
+        <p><label class='w3-text-black'><b>Endereço:</b></label></p>
+      <p>  <input readonly name='endereco' value='$endereco' name='endereco' class='w3-center w3-input w3-border w3-light-grey  w3-mobile' type='text' style='width: 260px;'></p>
+
+
+<p> <label class='w3-text-black w3-mobile'><b>Nome da mae:</b></label></p>
+        <p> <input readonly name='nomemae' value='$nomeMae' class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='text' style='width: 260px;'></p>
+
+<p> <label class='w3-text-black w3-mobile'><b>Nome do pai:</b></label></p>
+         <p><input readonly name='nomepai' value='$nomePai' class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='text' style='width: 260px;'></p>
 
      </form>
 </div>
 
-<br class='w3-hide-medium w3-hide-small'>
-  <br class='w3-hide-medium w3-hide-small'>
-  <br class='w3-hide-medium w3-hide-small'>
 ";
-        }
-        
-?>
-  <!-- FORMULARIO PARA O DESKTOP - FIM -->
+        } 
+       ?>
   
+<br class="w3-hide-medium w3-hide-small">
+  <br class="w3-hide-medium w3-hide-small">
+  <br class="w3-hide-medium w3-hide-small">
+  <br class="w3-hide-medium w3-hide-small">
+  <br class="w3-hide-medium w3-hide-small">
+  <br class="w3-hide-medium w3-hide-small">
+   <br class="w3-hide-medium w3-hide-small">
+
+<!-- FORMULARIO PARA O DESKTOP - FIM -->
+
 <!-- FORMULARIO MEDIUM -->
 
   <br class="w3-hide-large w3-hide-small">
-    <br class="w3-hide-large w3-hide-small">
-    <br class="w3-hide-large w3-hide-small">
-    <br class="w3-hide-large w3-hide-small">
-  <?php  
+    
+  <?php
   
-  include 'conexao.php';
-        $font = 'Alfa Slab One';
-        $email = $_SESSION['email'];
-        
-        $stmt= $con->prepare("SELECT cdUsuario FROM usuario WHERE email=?");
-        
-        $stmt->bindParam(1,$email);
-        
-        $stmt->execute();
-        
-        while($linha = $stmt->fetch(PDO::FETCH_ASSOC)){
-            
-            $cdUsuario = $linha['cdUsuario'];
-            
-            echo"
-<div class='w3-display-bottommiddle w3-light-grey w3-card-4 w3-center w3-hide-large w3-hide-small' style='width: 290px;position: relative; top:20px;'>
+  echo"
+<div class='w3-display-bottommiddle w3-light-grey w3-card-4 w3-center w3-hide-large w3-hide-small' style='width: 290px;position:relative;bottom:-64px;'>
     <div class='w3-container w3-blue w3-hide-large w3-hide-small' style='width:290px;'>
-    <h4 class='w3-hide-large w3-hide-small' style='font-family: $font, cursive;'>Cadastrar livro</h4>
+    <h4 style='font-family: 'Alfa Slab One', cursive;'>Dados pessoais</h4>
      </div>   
-
-    <form class='w3-container w3-hide-large w3-hide-small w3-mobile' action='__DIR__./../acoes/cadastrandoLivro.php' method='POST' enctype='multipart/form-data'    >
    
-  <p> <label class='w3-text-black w3-mobile'><b>Capa<span class='w3-text-red'>*</span></b></label></p>
-       <p> <input required class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='file' name='image' style='width: 260px;'></p>
+  <form class='w3-container w3-hide-large w3-mobile' method='POST' enctype='multipart/form-data'>
+   
 
-       <input type='hidden' placeholder='Codigo livro' name='cdUsuario' value='$cdUsuario' readonly>
-       
-       <input type='hidden' placeholder='Codigo livro' name='email' value='$email' readonly>
+     <input name='id' type='hidden' value='$id'>
 
-   <p> <label class='w3-text-black w3-mobile'><b>Nome<span class='w3-text-red'>*</span></b></label></p>
-      <p>  <input required class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='text' name='nomeLivro' style='width: 260px;'></p>
+<p><img class='w3-image w3-center' width='50' src='avatarusuarios/$avatar'></p>
+    
+   <p> <label class='w3-text-black w3-mobile'><b>CPF:</b></label></p>
+      <p>  <input readonly name='cpf' value='$cpf' class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='text' style='width: 260px;'></p>
 
-<p><label class='w3-text-black  w3-mobile'><b>Autor<span class='w3-text-red'>*</span></b></label></p>
-        <p><input required class='w3-center w3-input w3-border w3-light-grey  w3-mobile' type='text' name='autorLivro' style='width: 260px;'>
+<p><label class='w3-text-black  w3-mobile'><b>RG:</b></label></p>
+        <p><input readonly name='rg' value='$rg' class='w3-center w3-input w3-border w3-light-grey  w3-mobile' type='text' style='width: 260px;'>
 
-        <p><label class='w3-text-black  w3-mobile'><b>Tempo de uso<span class='w3-text-red'>*</span></b></label>
-       <p> <input required class='w3-center w3-input w3-border w3-light-grey  w3-mobile' type='text' name='idadeLivro' style='width: 260px;'></p>
+        <p><label class='w3-text-black  w3-mobile'><b>Nome:</b></label>
+       <p> <input readonly name='nome' value='$nome' class='w3-center w3-input w3-border w3-light-grey  w3-mobile' type='text' style='width: 260px;'></p>
 
-<p><label class='w3-text-black w3-mobile'><b>Estado de conservação<span class='w3-text-red'>*</span></b></label></p>
-       <p> <input required class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='text' name='estadoConservacao' style='width: 260px;'></p>
+<p><label class='w3-text-black w3-mobile'><b>Data de nascimento:</b></label></p>
+       <p> <input readonly name='dtn' value='$dtn' class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='text' style='width: 260px;'></p>
 
 
-<p><label class='w3-text-black  w3-mobile'><b>Genero<span class='w3-text-red'>*</span></b></label></p>
-       <p> <input required class='w3-center w3-input w3-border w3-light-grey  w3-mobile' type='text' name='genero' style='width: 260px;'></p>
+<p><label class='w3-text-black  w3-mobile'><b>Telefone:</b></label></p>
+       <p> <input readonly name='telefone' value='$telefone' class='w3-center w3-input w3-border w3-light-grey  w3-mobile' type='text' style='width: 260px;'></p>
 
-       <p> <input type='submit' class='w3-input w3-button w3-blue w3-mobile' value='Enviar' style='width:160px;position:relative;right:-50px;font-family: $font, cursive;'></p>
+        <p><label class='w3-text-black'><b>Endereço:</b></label></p>
+      <p>  <input readonly name='endereco' value='$endereco' name='endereco' class='w3-center w3-input w3-border w3-light-grey  w3-mobile' type='text' style='width: 260px;'></p>
+
+
+<p> <label class='w3-text-black w3-mobile'><b>Nome da mae:</b></label></p>
+        <p> <input readonly name='nomemae' value='$nomeMae' class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='text' style='width: 260px;'></p>
+
+<p> <label class='w3-text-black w3-mobile'><b>Nome do pai:</b></label></p>
+         <p><input readonly name='nomepai' value='$nomePai' class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='text' style='width: 260px;'></p>
+
 
      </form>
 </div>
-
 ";
-        }
-        
-?>
-
+      
+      ?>
+  
 <br class="w3-hide-large w3-hide-small">
   <br class="w3-hide-large w3-hide-small">
   <br class="w3-hide-large w3-hide-small">
 <br class="w3-hide-large w3-hide-small">
+<br class="w3-hide-large w3-hide-small">
+    <br class="w3-hide-large w3-hide-small">
 <br class="w3-hide-large w3-hide-small">
     <br class="w3-hide-large w3-hide-small">
 
@@ -360,63 +380,50 @@ $avatar = $linha['avatar'];
 
     <!-- FORMULARIO SMALL -->
     
-    <?php  
-  
-  include 'conexao.php';
-        $font = 'Alfa Slab One';
-        $email = $_SESSION['email'];
-        
-        $stmt= $con->prepare("SELECT cdUsuario FROM usuario WHERE email=?");
-        
-        $stmt->bindParam(1,$email);
-        
-        $stmt->execute();
-        
-        while($linha = $stmt->fetch(PDO::FETCH_ASSOC)){
-            
-            $cdUsuario = $linha['cdUsuario'];
-            
-            echo"
-<div class='w3-display-bottommiddle w3-light-grey w3-card-4 w3-center w3-hide-large w3-hide-medium' style='width: 290px;position: relative; top:20px;'>
+    <?php
+    echo"
+    <div class='w3-display-bottommiddle w3-light-grey w3-card-4 w3-center w3-hide-large w3-hide-medium' style='width: 290px;position:relative;bottom:-20px;'>
     <div class='w3-container w3-blue w3-hide-large w3-hide-medium' style='width:290px;'>
-    <h4 class='w3-hide-large w3-hide-medium' style='font-family: $font, cursive;'>Cadastrar livro</h4>
+    <h4 style='font-family: $font_style, cursive;'>Dados pessoais</h4>
      </div>   
-
-    <form class='w3-container w3-hide-large w3-hide-medium w3-mobile' action='__DIR__./../acoes/cadastrandoLivro.php' method='POST' enctype='multipart/form-data'    >
    
-  <p> <label class='w3-text-black w3-mobile'><b>Capa<span class='w3-text-red'>*</span></b></label></p>
-       <p> <input required class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='file' name='image' style='width: 260px;'></p>
+<form class='w3-container w3-hide-large w3-mobile' method='POST' enctype='multipart/form-data'>
+   
+     <input name='id' type='hidden' value='$id'>
 
-       <input type='hidden' placeholder='Codigo livro' name='cdUsuario' value='$cdUsuario' readonly>
-       
-       <input type='hidden' placeholder='Codigo livro' name='email' value='$email' readonly>
+<p><img class='w3-image w3-center' width='50' src='avatarusuarios/$avatar'></p>
+    
+   <p> <label class='w3-text-black w3-mobile'><b>CPF:</b></label></p>
+      <p>  <input readonly name='cpf' value='$cpf' class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='text' style='width: 260px;'></p>
 
-   <p> <label class='w3-text-black w3-mobile'><b>Nome<span class='w3-text-red'>*</span></b></label></p>
-      <p>  <input required class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='text' name='nomeLivro' style='width: 260px;'></p>
+<p><label class='w3-text-black  w3-mobile'><b>RG:</b></label></p>
+        <p><input readonly name='rg' value='$rg' class='w3-center w3-input w3-border w3-light-grey  w3-mobile' type='text' style='width: 260px;'>
 
-<p><label class='w3-text-black  w3-mobile'><b>Autor<span class='w3-text-red'>*</span></b></label></p>
-        <p><input required class='w3-center w3-input w3-border w3-light-grey  w3-mobile' type='text' name='autorLivro' style='width: 260px;'>
+        <p><label class='w3-text-black  w3-mobile'><b>Nome:</b></label>
+       <p> <input readonly name='nome' value='$nome' class='w3-center w3-input w3-border w3-light-grey  w3-mobile' type='text' style='width: 260px;'></p>
 
-        <p><label class='w3-text-black  w3-mobile'><b>Tempo de uso<span class='w3-text-red'>*</span></b></label>
-       <p> <input required class='w3-center w3-input w3-border w3-light-grey  w3-mobile' type='text' name='idadeLivro' style='width: 260px;'></p>
-
-<p><label class='w3-text-black w3-mobile'><b>Estado de conservação<span class='w3-text-red'>*</span></b></label></p>
-       <p> <input required  class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='text' name='estadoConservacao' style='width: 260px;'></p>
+<p><label class='w3-text-black w3-mobile'><b>Data de nascimento:</b></label></p>
+       <p> <input readonly name='dtn' value='$dtn' class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='text' style='width: 260px;'></p>
 
 
-<p><label class='w3-text-black  w3-mobile'><b>Genero<span class='w3-text-red'>*</span></b></label></p>
-       <p> <input required class='w3-center w3-input w3-border w3-light-grey  w3-mobile' type='text' name='genero' style='width: 260px;'></p>
+<p><label class='w3-text-black  w3-mobile'><b>Telefone:</b></label></p>
+       <p> <input readonly name='telefone' value='$telefone' class='w3-center w3-input w3-border w3-light-grey  w3-mobile' type='text' style='width: 260px;'></p>
 
-       <p> <input type='submit' class='w3-input w3-button w3-blue w3-mobile' value='Enviar' style='width:160px;font-family: $font, cursive;'></p>
+        <p><label class='w3-text-black'><b>Endereço:</b></label></p>
+      <p>  <input readonly name='endereco' value='$endereco' name='endereco' class='w3-center w3-input w3-border w3-light-grey  w3-mobile' type='text' style='width: 260px;'></p>
+
+
+<p> <label class='w3-text-black w3-mobile'><b>Nome da mae:</b></label></p>
+        <p> <input readonly name='nomemae' value='$nomeMae' class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='text' style='width: 260px;'></p>
+
+<p> <label class='w3-text-black w3-mobile'><b>Nome do pai:</b></label></p>
+         <p><input readonly name='nomepai' value='$nomePai' class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='text' style='width: 260px;'></p>
 
      </form>
 </div>
-
 ";
-        }
-        
-?>
-
+       ?>
+    
 <br class="w3-hide-large w3-hide-medium">
   <br class="w3-hide-large w3-hide-medium">
   <br class="w3-hide-large w3-hide-medium">

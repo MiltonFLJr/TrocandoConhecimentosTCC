@@ -87,7 +87,8 @@
    
    <br class="w3-hide-medium w3-hide-small">
    
-   <div class="w3-container w3-bar w3-green w3-center">
+   <div class="w3-container w3-alert w3-green w3-center">
+       <h3>Cadastro efetuado</h3>
        <p style="font-family: 'Alfa Slab One', cursive;">O cadastro foi concluído com sucesso, você já pode fazer <a href="login.php">login</a> . </p>
    </div>
 

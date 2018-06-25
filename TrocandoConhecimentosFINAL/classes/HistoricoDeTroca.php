@@ -36,29 +36,29 @@ while($linha2 = $stmt2->fetch(PDO::FETCH_ASSOC)){
     
     echo "<center>";
     echo "<div class='w3-container'>";
-     echo "<table border='2' class='w3-table'>";
+     echo "<table border='2' class='w3-table w3-bordered w3-card-4'>";
      
-          echo "<th>";
+          echo "<th class='w3-black w3-text-white w3-center'>";
           echo "Código livro";
           echo "</th>" ; 
           
-          echo "<th>";
+          echo "<th class='w3-black w3-text-white w3-center'>";
           echo "Nome do livro";
           echo "</th>" ; 
           
-            echo "<th>";
+            echo "<th class='w3-black w3-text-white w3-center'>";
           echo "Nome do livro oferecido";
           echo "</th>" ; 
           
-            echo "<th>";
+            echo "<th class='w3-black w3-text-white w3-center'>";
           echo "Resultado da troca";
           echo "</th>" ; 
           
-          echo "<th>";
+          echo "<th class='w3-black w3-text-white w3-center'>";
           echo "Usuário que ofereceu o livro";
           echo "</th>" ; 
           
-            echo "<th>";
+            echo "<th class='w3-black w3-text-white w3-center'>";
           echo "Data da troca";
           echo "</th>" ; 
           
@@ -66,27 +66,27 @@ while($linha2 = $stmt2->fetch(PDO::FETCH_ASSOC)){
           
           echo  "<tr>";
           
-          echo  "<td>";
+          echo  "<td class='w3-center'>";
         echo ($linha2['cdLivro']);
        echo "</td>";
        
-        echo  "<td>";
+        echo  "<td class='w3-center'>";
         echo $linha2['nomeLivro'];
        echo "</td>";
        
-           echo  "<td>";
-        echo $linha2['nomeLivroOferecido'];
-       echo "</td>";
-
-       echo  "<td>";
+           echo  "<td class='w3-center'>";
         echo $linha2['resultadoTroca'];
        echo "</td>";
+
+       echo  "<td class='w3-center'>";
+        echo $linha2['nomeLivroOferecido'];
+       echo "</td>";
        
-        echo  "<td>";
+        echo  "<td class='w3-center'>";
         echo $linha2['dadosUsuarioTroca'];
        echo "</td>";
        
-        echo  "<td>";
+        echo  "<td class='w3-center'>";
         echo $linha2['dtTrocaLivro'];
        echo "</td>";
        

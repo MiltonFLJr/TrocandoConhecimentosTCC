@@ -35,7 +35,7 @@
        <div class="w3-top">
  <div class="w3-bar w3-black w3-border-4 w3-mobile w3-card-4 w3-large w3-hide-small w3-hide-medium">
 
-     <a href="index.html" class="w3schools-logo w3-left">
+     <a href="#" class="w3schools-logo w3-left">
      <img class="w3-image" hegiht="50" width="60" src="imgs/logo.png"> 
      </a>     
      
@@ -61,8 +61,8 @@
   <button onclick="myFunction3()" class="w3-button w3-black" style="font-family: 'Alfa Slab One', cursive;">Trocas ▼</button>
   <div id="Demo3" class="w3-dropdown-content w3-bar-block w3-border">
     <a href="#" class="w3-bar-item w3-button">Solicitaçoes enviadas</a>
-    <a href="#" class="w3-bar-item w3-button">Solicitaçoes recebidas</a>
-    <a href="#" class="w3-bar-item w3-button">Historico</a>
+    <a href="solicitacoespendentestroca.php" class="w3-bar-item w3-button">Solicitaçoes recebidas</a>
+    <a href="historicodetrocas.php" class="w3-bar-item w3-button">Historico</a>
   </div>
 </div>
 
@@ -112,8 +112,8 @@
                 <div class="w3-dropdown-click">
   <button onclick="myFunction4()" class="w3-button w3-center" style="font-family: 'Alfa Slab One', cursive;background-color:#2B2B2B;">Conta ▼</button>
   <div id="Demo4" class="w3-dropdown-content w3-bar-block w3-border">
+      <a href="consultardados.php" class="w3-bar-item w3-button">Consultar dados pessoais</a>
       <a href="alterardados.php" class="w3-bar-item w3-button">Alterar dados pessoais</a>
-    <a href="#" class="w3-bar-item w3-button">Alterar e-mail e senha</a>
     <a href="excluirconta.php" class="w3-bar-item w3-button">Excluir conta</a>
   </div>
 </div>
@@ -132,8 +132,8 @@
   <button onclick="myFunction6()" class="w3-button w3-center" style="font-family: 'Alfa Slab One', cursive;background-color:#2B2B2B;">Trocas ▼</button>
   <div id="Demo6" class="w3-dropdown-content w3-bar-block w3-border">
     <a href="#" class="w3-bar-item w3-button">Solicitaçoes enviadas</a>
-    <a href="#" class="w3-bar-item w3-button">Solicitaçoes recebidas</a>
-    <a href="#" class="w3-bar-item w3-button">Historico</a>
+    <a href="solicitacoespendentestroca.php" class="w3-bar-item w3-button">Solicitaçoes recebidas</a>
+    <a href="historicodetrocas.php" class="w3-bar-item w3-button">Historico</a>
   </div>
 </div>
 
@@ -189,8 +189,10 @@
    
    <br class="w3-hide-medium w3-hide-small">
    <br class="w3-hide-medium w3-hide-small">
+   <br class="w3-hide-medium w3-hide-small">
    
-   <div class="w3-container w3-bar w3-green w3-center">
+   <div class="w3-container w3-alert w3-green w3-center">
+       <h3>Solicitação enviada</h3>
        <p style="font-family: 'Alfa Slab One', cursive;">A solicitação de troca foi enviada com sucesso. </p>
    </div>
   

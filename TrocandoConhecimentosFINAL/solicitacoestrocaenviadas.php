@@ -8,20 +8,6 @@
 
 <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
 
-<!-- ARQUIVOS DE PERSONALIZAÇAO -->
-	<link rel="stylesheet" type="text/css" href="outros/vendor/bootstrap/css/bootstrap.min.css">
-
-	<link rel="stylesheet" type="text/css" href="outros/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-
-	<link rel="stylesheet" type="text/css" href="outros/vendor/animate/animate.css">
-
-	<link rel="stylesheet" type="text/css" href="outros/vendor/select2/select2.min.css">
-
-	<link rel="stylesheet" type="text/css" href="outros/vendor/perfect-scrollbar/perfect-scrollbar.css">
-
-	<link rel="stylesheet" type="text/css" href="outros/css/util.css">
-	<link rel="stylesheet" type="text/css" href="outros/css/main.css">
-	<!-- ARQUIVOS DE PERSONALIZAÇAO -->
     </head>    
     
 <body>
@@ -50,7 +36,7 @@
        <div class="w3-top">
  <div class="w3-bar w3-black w3-border-4 w3-mobile w3-card-4 w3-large w3-hide-small w3-hide-medium">
 
-     <a href="index.html" class="w3schools-logo w3-left">
+     <a href="#" class="w3schools-logo w3-left">
      <img class="w3-image" hegiht="50" width="60" src="imgs/logo.png"> 
      </a>     
      
@@ -58,8 +44,8 @@
          <div class="w3-dropdown-click">
   <button onclick="myFunction()" class="w3-button w3-black" style="font-family: 'Alfa Slab One', cursive;">Conta ▼</button>
   <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border">
+            <a href="consultardados.php" class="w3-bar-item w3-button">Consultar dados pessoais</a>
     <a href="alterardados.php" class="w3-bar-item w3-button">Alterar dados pessoais</a>
-    <a href="#" class="w3-bar-item w3-button">Alterar e-mail e senha</a>
     <a href="excluirconta.php" class="w3-bar-item w3-button">Excluir conta</a>
   </div>
 </div>
@@ -77,7 +63,7 @@
   <div id="Demo3" class="w3-dropdown-content w3-bar-block w3-border">
     <a href="#" class="w3-bar-item w3-button">Solicitaçoes enviadas</a>
     <a href="solicitacoespendentestroca.php" class="w3-bar-item w3-button">Solicitaçoes recebidas</a>
-    <a href="#" class="w3-bar-item w3-button">Historico</a>
+    <a href="historicodetrocas.php" class="w3-bar-item w3-button">Historico</a>
   </div>
 </div>
 
@@ -94,7 +80,26 @@
      </a>     
 
        <a class="w3-right w3-hide-medium w3-hide-small">
-     <img class="w3-image" width="53" src="imgs/avatar.jpeg"> 
+    <?php 
+
+include 'conexao.php';
+
+$stmt = $con->prepare("SELECT avatar FROM usuario WHERE email=?");
+
+$stmt->bindParam(1,$_SESSION['email']);
+
+$stmt->execute();
+
+while($linha = $stmt->fetch(PDO::FETCH_ASSOC)){
+
+$avatar = $linha['avatar'];
+
+ echo"<img class='w3-image w3-center' width='50' src='avatarusuarios/$avatar'>";
+
+}
+
+
+     ?>
      </a>     
 
     </div>   
@@ -107,7 +112,28 @@
          
 
           <a class="w3-left w3-hide-large">
-     <img class="w3-image" width="53" src="imgs/avatar.jpeg"> 
+     
+              <?php 
+
+include 'conexao.php';
+
+$stmt = $con->prepare("SELECT avatar FROM usuario WHERE email=?");
+
+$stmt->bindParam(1,$_SESSION['email']);
+
+$stmt->execute();
+
+while($linha = $stmt->fetch(PDO::FETCH_ASSOC)){
+
+$avatar = $linha['avatar'];
+
+ echo"<img class='w3-image w3-center' width='50' src='avatarusuarios/$avatar'>";
+
+}
+
+
+     ?>
+              
      </a>     
 
          <a class="w3-bar-item w3-left w3-hide-large">

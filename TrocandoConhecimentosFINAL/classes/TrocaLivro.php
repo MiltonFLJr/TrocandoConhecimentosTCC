@@ -89,10 +89,7 @@ class TrocaLivro extends LivroTrocaLivro {
       /* EXCLUIR DADOS DAS TABELAS DE TROCA PARA ALOCAR NO HISTÓRICO*/
   
   }
-    
-   public function alterarTrocaLivro(){
-       
-   }
+
    
    public function consultarTrocaLivro(){
        
@@ -149,11 +146,11 @@ class TrocaLivro extends LivroTrocaLivro {
         echo "</th>";
         
         echo "<th class='w3-black w3-text-white w3-center' style='$font;'>";
-        echo "Ação";
+        echo " ";
         echo "</th>";
         
         echo "<th class='w3-black w3-text-white w3-center' style='$font;'>";
-        echo "Ação";
+        echo " ";
         echo "</th>";
         
         echo "</tr>";
@@ -179,11 +176,11 @@ class TrocaLivro extends LivroTrocaLivro {
         echo "</td>";
         
         echo "<td class='w3-center'>";
-        echo "<button type='submit' class='form-control' value='Aceito' name='sub'>Aceitar</button>";
+        echo "<button class='w3-button w3-green' type='submit' class='form-control' value='Aceito' name='sub'>Aceitar</button>";
         echo "</td>";
         
             echo "<td class='w3-center'>";
-        echo "<button type='submit' class='form-control' value='Recusado' name='sub' >Recusar</button>";
+        echo "<button class='w3-button w3-red'type='submit' class='form-control' value='Recusado' name='sub' >Recusar</button>";
         echo "</td>";
         
         echo "</table>";  
@@ -198,14 +195,9 @@ class TrocaLivro extends LivroTrocaLivro {
    
    }
    
-   public function selecionarLivroParaTroca(){
-       
-   }
+
    
-  public function enviarDemonstracaoDeInteresseDeTrocaParaUsuario(){
-      
-  }
-  
+
   public function recusarTroca($cdTrocaLivro,$resultadoTroca){
       
       include 'conexao.php';
@@ -272,7 +264,7 @@ class TrocaLivro extends LivroTrocaLivro {
   
   public function exibirSolicitacoesEnviadas(){
       
-      require_once('conexao.php');
+      include('conexao.php');
       
        $pendente = "Pendente";
        

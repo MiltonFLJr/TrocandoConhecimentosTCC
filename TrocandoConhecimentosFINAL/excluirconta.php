@@ -33,7 +33,7 @@
        <div class="w3-top">
  <div class="w3-bar w3-black w3-border-4 w3-mobile w3-card-4 w3-large w3-hide-small w3-hide-medium">
 
-     <a href="index.html" class="w3schools-logo w3-left">
+     <a href="#" class="w3schools-logo w3-left">
      <img class="w3-image" hegiht="50" width="60" src="imgs/logo.png"> 
      </a>     
      
@@ -41,8 +41,8 @@
          <div class="w3-dropdown-click">
   <button onclick="myFunction()" class="w3-button w3-black" style="font-family: 'Alfa Slab One', cursive;">Conta ▼</button>
   <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border">
+      <a href="consultardados.php" class="w3-bar-item w3-button">Consultar dados pessoais</a>
       <a href="alterardados.php" class="w3-bar-item w3-button">Alterar dados pessoais</a>
-    <a href="#" class="w3-bar-item w3-button">Alterar e-mail e senha</a>
     <a href="excluirconta.php" class="w3-bar-item w3-button">Excluir conta</a>
   </div>
 </div>
@@ -151,8 +151,8 @@ $avatar = $linha['avatar'];
                 <div class="w3-dropdown-click">
   <button onclick="myFunction4()" class="w3-button w3-center" style="font-family: 'Alfa Slab One', cursive;background-color:#2B2B2B;">Conta ▼</button>
   <div id="Demo4" class="w3-dropdown-content w3-bar-block w3-border">
-    <a href="#" class="w3-bar-item w3-button">Alterar dados pessoais</a>
-    <a href="#" class="w3-bar-item w3-button">Alterar e-mail e senha</a>
+      <a href="consultardados.php" class="w3-bar-item w3-button">Consultar dados pessoais</a>
+    <a href="alterardados.php" class="w3-bar-item w3-button">Alterar dados pessoais</a>
     <a href="#" class="w3-bar-item w3-button">Excluir conta</a>
   </div>
 </div>
@@ -161,7 +161,7 @@ $avatar = $linha['avatar'];
   <div class="w3-dropdown-click">
   <button onclick="myFunction5()" class="w3-button w3-center" style="font-family: 'Alfa Slab One', cursive;background-color:#2B2B2B;">Livros ▼</button>
   <div id="Demo5" class="w3-dropdown-content w3-bar-block w3-border" style="width:210px;" >
-    <a href="#" class="w3-bar-item w3-button">Cadastrar livros</a>
+    <a href="cadastrarlivro.php" class="w3-bar-item w3-button">Cadastrar livros</a>
    <a href="#" class="w3-bar-item w3-button">Meus livros</a>
   </div>
 </div>

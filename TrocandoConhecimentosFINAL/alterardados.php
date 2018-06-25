@@ -34,7 +34,7 @@
        <div class="w3-top">
  <div class="w3-bar w3-black w3-border-4 w3-mobile w3-card-4 w3-large w3-hide-small w3-hide-medium">
 
-     <a href="index.html" class="w3schools-logo w3-left">
+     <a href="#" class="w3schools-logo w3-left">
      <img class="w3-image" hegiht="50" width="60" src="imgs/logo.png"> 
      </a>     
      
@@ -42,8 +42,8 @@
          <div class="w3-dropdown-click">
   <button onclick="myFunction()" class="w3-button w3-black" style="font-family: 'Alfa Slab One', cursive;">Conta ▼</button>
   <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border">
+      <a href="consultardados.php" class="w3-bar-item w3-button">Consultar dados pessoais</a>
     <a href="#" class="w3-bar-item w3-button">Alterar dados pessoais</a>
-    <a href="#" class="w3-bar-item w3-button">Alterar e-mail e senha</a>
     <a href="excluirconta.php" class="w3-bar-item w3-button">Excluir conta</a>
   </div>
 </div>
@@ -151,8 +151,8 @@ $avatar = $linha['avatar'];
                 <div class="w3-dropdown-click">
   <button onclick="myFunction4()" class="w3-button w3-center" style="font-family: 'Alfa Slab One', cursive;background-color:#2B2B2B;">Conta ▼</button>
   <div id="Demo4" class="w3-dropdown-content w3-bar-block w3-border">
+       <a href="consultardados.php" class="w3-bar-item w3-button">Consultar dados pessoais</a>
     <a href="#" class="w3-bar-item w3-button">Alterar dados pessoais</a>
-    <a href="#" class="w3-bar-item w3-button">Alterar e-mail e senha</a>
     <a href="#" class="w3-bar-item w3-button">Excluir conta</a>
   </div>
 </div>
@@ -269,6 +269,11 @@ $avatar = $linha['avatar'];
     <p> <label class='w3-text-black w3-mobile'><b>Avatar:</b></label></p>
        <p> <input name='image' class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='file' style='width: 260px;'></p>
 
+<p> <label class='w3-text-black w3-mobile'><b>Email</b></label></p>
+      <p>  <input name='email' value='$emailbd' class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='text' style='width: 260px;'></p>
+          
+<p> <label class='w3-text-black w3-mobile'><b>Senha:</b></label></p>
+      <p>  <input name='senha' value='$senhabd' class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='text' style='width: 260px;'></p>
 
    <p> <label class='w3-text-black w3-mobile'><b>CPF:</b></label></p>
       <p>  <input name='cpf' value='$cpf' class='w3-center w3-input w3-border w3-light-grey w3-mobile' type='text' style='width: 260px;'></p>

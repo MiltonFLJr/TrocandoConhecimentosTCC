@@ -4,8 +4,7 @@
 <title>Cadastrar livro</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css/w3.css">
-<link rel="stylesheet" type="text/css" href="css/table.css">
-    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <link rel="stylesheet" type="text/css" href="../css/custom.css">
 
 <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
     </head>    
@@ -44,8 +43,7 @@
          <div class="w3-dropdown-click">
   <button onclick="myFunction()" class="w3-button w3-black" style="font-family: 'Alfa Slab One', cursive;">Conta ▼</button>
   <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border">
-    <a href="consultardados.php" class="w3-bar-item w3-button">Consultar dados pessoais</a>
-      <a href="alterardados.php" class="w3-bar-item w3-button">Alterar dados pessoais</a>
+    <a href="alterardados.php" class="w3-bar-item w3-button">Alterar dados pessoais</a>
     <a href="excluirconta.php" class="w3-bar-item w3-button">Excluir conta</a>
   </div>
 </div>
@@ -54,7 +52,7 @@
   <button onclick="myFunction2()" class="w3-button w3-black" style="font-family: 'Alfa Slab One', cursive;">Livros ▼</button>
   <div id="Demo2" class="w3-dropdown-content w3-bar-block w3-border" style="width:210px;" >
       <a href="cadastrarlivro.php" class="w3-bar-item w3-button">Cadastrar livros</a>
-   <a href="#" class="w3-bar-item w3-button">Meus livros</a>
+   <a href="meuslivroscadastrados.php" class="w3-bar-item w3-button">Meus livros</a>
   </div>
 </div>
 
@@ -63,7 +61,7 @@
   <div id="Demo3" class="w3-dropdown-content w3-bar-block w3-border">
     <a href="solicitacoestrocaenviadas.php" class="w3-bar-item w3-button">Solicitaçoes enviadas</a>
     <a href="solicitacoespendentestroca.php" class="w3-bar-item w3-button">Solicitaçoes recebidas</a>
-    <a href="historicodetrocas.php" class="w3-bar-item w3-button">Historico</a>
+    <a href="historicodetrocas.php#" class="w3-bar-item w3-button">Historico</a>
   </div>
 </div>
 
@@ -80,28 +78,7 @@
      </a>     
 
        <a class="w3-right w3-hide-medium w3-hide-small">
-
-     <?php 
-
-include 'conexao.php';
-
-$stmt = $con->prepare("SELECT avatar FROM usuario WHERE email=?");
-
-$stmt->bindParam(1,$_SESSION['email']);
-
-$stmt->execute();
-
-while($linha = $stmt->fetch(PDO::FETCH_ASSOC)){
-
-$avatar = $linha['avatar'];
-
- echo"<img class='w3-image w3-center' width='50' src='avatarusuarios/$avatar'>";
-
-}
-
-
-     ?>
-
+     <img class="w3-image" width="53" src="imgs/avatar.jpeg"> 
      </a>     
 
     </div>   
@@ -114,28 +91,7 @@ $avatar = $linha['avatar'];
          
 
           <a class="w3-left w3-hide-large">
-     
-<?php 
-
-include 'conexao.php';
-
-$stmt = $con->prepare("SELECT avatar FROM usuario WHERE email=?");
-
-$stmt->bindParam(1,$_SESSION['email']);
-
-$stmt->execute();
-
-while($linha = $stmt->fetch(PDO::FETCH_ASSOC)){
-
-$avatar = $linha['avatar'];
-
- echo"<img class='w3-image w3-center' width='50' src='avatarusuarios/$avatar'>";
-
-}
-
-
-     ?>
-
+     <img class="w3-image" width="53" src="imgs/avatar.jpeg"> 
      </a>     
 
          <a class="w3-bar-item w3-left w3-hide-large">
@@ -155,7 +111,6 @@ $avatar = $linha['avatar'];
                 <div class="w3-dropdown-click">
   <button onclick="myFunction4()" class="w3-button w3-center" style="font-family: 'Alfa Slab One', cursive;background-color:#2B2B2B;">Conta ▼</button>
   <div id="Demo4" class="w3-dropdown-content w3-bar-block w3-border">
-       <a href="consultardados.php" class="w3-bar-item w3-button">Consultar dados pessoais</a>
       <a href="alterardados.php" class="w3-bar-item w3-button">Alterar dados pessoais</a>
     <a href="excluirconta.php" class="w3-bar-item w3-button">Excluir conta</a>
   </div>
@@ -166,7 +121,7 @@ $avatar = $linha['avatar'];
   <button onclick="myFunction5()" class="w3-button w3-center" style="font-family: 'Alfa Slab One', cursive;background-color:#2B2B2B;">Livros ▼</button>
   <div id="Demo5" class="w3-dropdown-content w3-bar-block w3-border" style="width:210px;" >
     <a href="cadastrarlivro.php" class="w3-bar-item w3-button">Cadastrar livros</a>
-   <a href="#" class="w3-bar-item w3-button">Meus livros</a>
+   <a href="meuslivroscadastrados.php" class="w3-bar-item w3-button">Meus livros</a>
   </div>
 </div>
    
@@ -174,9 +129,9 @@ $avatar = $linha['avatar'];
         <div class="w3-dropdown-click">
   <button onclick="myFunction6()" class="w3-button w3-center" style="font-family: 'Alfa Slab One', cursive;background-color:#2B2B2B;">Trocas ▼</button>
   <div id="Demo6" class="w3-dropdown-content w3-bar-block w3-border">
-    <a href="solicitacoestrocaenviadas.php" class="w3-bar-item w3-button">Solicitaçoes enviadas</a>
-    <a href="solicitacoespendentestroca.php" class="w3-bar-item w3-button">Solicitaçoes recebidas</a>
-    <a href="historicodetrocas.php" class="w3-bar-item w3-button">Historico</a>
+    <a href="#" class="w3-bar-item w3-button">Solicitaçoes enviadas</a>
+    <a href="#" class="w3-bar-item w3-button">Solicitaçoes recebidas</a>
+    <a href="#" class="w3-bar-item w3-button">Historico</a>
   </div>
 </div>
 
@@ -217,185 +172,29 @@ $avatar = $linha['avatar'];
     <div class="w3-modal-content">
       <div class="w3-container">
         <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-        
-        <!-- CONTEÚDO MODAL --> 
-        
-        <?php
-        
-        include 'conexao.php';
-     
-     $font = "font-family:Alfa Slab One, cursive";
-     $cdu = $_SESSION['cdUs'];
-     
-    $stmt = $con->prepare("SELECT cdLivro FROM usuario_livro WHERE cdUsuario=? ");
-    
-    $stmt->bindParam(1,$cdu);
-    
-    $stmt->execute();
-    
-    while($linha = $stmt->fetch(PDO::FETCH_ASSOC)){
-        
-        $cdLivro = $linha['cdLivro'];
-        
-       $stmt2 = $con->prepare("SELECT * FROM livro WHERE cdLivro<>?");
-        
-             $stmt2->bindParam(1,$cdLivro);
-
-        $stmt2->execute();
-    
-    while($linha2 = $stmt2->fetch(PDO::FETCH_ASSOC)){
- 
-        
-         $nome = $linha2['nomeLivro'];
-         $cdLivro = $linha2['cdLivro'];   
-         $capa = $linha2['capa'];   
-         $autor = $linha2['autorLivro'];
-         $idade = $linha2['idadeLivro'];
-         $estado = $linha2['estadoConservacaoLivro'];
-         $genero = $linha2['generoLivro'];
-         
-        
-         echo "<form class='w3-container' action='acoes/enviandoSolicitacaoLivro.php' method='POST'>";
-        echo "<table class='w3-table w3-card-4 w3-bordered' border='3'>";
-        echo "<tr>";
-        
-        echo "<th class='w3-black w3-text-white w3-center' style='$font;'>";
-        echo "Capa";
-        echo "</th>";
-        
-           echo "<th class='w3-black w3-text-white w3-center' style='$font;'>";
-        echo "Nome";
-        echo "</th>";
-        
-        echo "<th class='w3-black w3-text-white w3-center' style='$font;'>";
-        echo "Autor";
-        echo "</th>";
-        
-         echo "<th class='w3-black w3-text-white w3-center' style='$font;'>";
-        echo "Estado de conservação";
-        echo "</th>";
-        
-        echo "<th class='w3-black w3-text-white w3-center' style='$font;'>";
-        echo "Gênero";
-        echo "</th>";
-        
-      echo "<th class='w3-black w3-text-white w3-center' style='$font;'>";
-        echo "Oferecer Livro";
-        echo "</th>";
-        
-        echo "<th class='w3-black w3-text-white w3-center' style='$font;'>";
-        echo "Ação";
-        echo "</th>";
-        
-        echo "</tr>";
-        
-        echo "<tr>";
-        echo "<td class='w3-center w3-hover-blue'>";
-        echo "<img src='capaslivros/$capa' width='120' height='150' ";
-        echo "</td>";
-        
-
-        echo "<input type='hidden' name='cd' value='$cdLivro'>";
-        
-         echo "<td class='w3-center w3-hover-blue'>";
-        echo $nome;
-        echo "<input type='hidden' name='nomeLivro' value='$nome'>";
-        echo "</td>";
-        
-        echo "<td class='w3-center w3-hover-blue'>";
-        echo $autor;
-        echo "</td>";
-        
-        echo "<td class='w3-center w3-hover-blue'>";
-        echo $estado;
-        echo "</td>";
-        
-         echo "<td class='w3-center w3-hover-blue'>";
-        echo $genero;
-        echo "</td>";
-        
-        
-         echo "<td>";
-         
-         /* SELECT PARA TRAZER O NOME DOS LIVROS DO USUARIO */
-           
-             $stmt3= $con->prepare("SELECT cdLivro FROM usuario_livro WHERE cdUsuario=?");
-        
-        $stmt3->bindParam(1,$cdu);
-        
-        $stmt3->execute();
-        
-        while($linha3 = $stmt3->fetch(PDO::FETCH_ASSOC)){
-            
-            $cdLivros = ($linha3['cdLivro']);
-            //var_dump($cdLivros);
-            
-                    $stmt4 = $con->prepare("SELECT nomeLivro FROM livro WHERE cdLivro=?");
-        
-        $stmt4->bindParam(1,$cdLivros);
-        
-        $stmt4->execute();
-        
-        while($linha4 = $stmt4->fetch(PDO::FETCH_ASSOC)){
- 
-             $nome = $linha4['nomeLivro'];
-         echo "<p>";
-        echo "<input type='radio' name='nomebook' value='$nome'>$nome</input>";
-       echo "</p>";
-
-       /* SELEÇÃO POR MENU SEM USO
-        echo "<select class='form-control' name='nomebook'>";
-        echo "<option value='$nome'>$nome</option>";
-        echo "</select>";
-        
-SELEÇÃO POR MENU SEM USO */
-            
-        }
-        
-        }
-          
-  /*SELECT PARA TRAZER O NOME DOS LIVROS DO USUARIO*/ 
-        
-        echo "</td>"; 
-        
-        echo "<td>";
-        echo "<button type='submit' class='w3-button w3-blue' style='$font;'>Enviar solicitação troca</button>";
-        echo "</td>";
-        
-        echo "</tr>";
-        echo "</table>";  
-        echo "</form>";
-        
-}
-
-}
-        ?>
-        
-         <!-- CONTEÚDO MODAL --> 
+        <p>Livro 1</p>
+        <p>Livro 2</p>
       </div>
     </div>
   </div>
 
-<p class="w3-responsive w3-center w3-large" style="font-family: 'Alfa Slab One', cursive;">MEUS LIVROS CADASTRADOS</p>
-  
-
   <!-- CÓNTEÚDO DA PÁGINA - INÍCIO -->
   
-   <?php
-  
-      require_once('./classes/Livro.php');
-        
-   $livro = new Livro();
+     <br class="w3-hide-large">
+  <br class="w3-hide-large">
+ <br class="w3-hide-large">
+   <br class="w3-hide-large">
    
-   $livro->consultarMeuLivro();
-        
-        ?>
+   <br class="w3-hide-medium w3-hide-small">
+   <br class="w3-hide-medium w3-hide-small">
+   
+   <div class="w3-container w3-alert w3-blue w3-center">
+       <h3>Solicitação já enviada antes</h3>
+       <p style="font-family: 'Alfa Slab One', cursive;">Escolha outro livro para propor uma troca. </p>
+   </div>
   
    <!-- CÓNTEÚDO DA PÁGINA - FIM -->
    
-<br>
-<br>
-<br>
 <br>
 <br>
 <br>

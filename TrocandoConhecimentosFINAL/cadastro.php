@@ -16,14 +16,14 @@
        <div class="w3-top">
  <div class="w3-bar w3-black w3-border-4 w3-mobile w3-card-4 w3-large w3-hide-small w3-hide-medium">
 
-     <a href="index.php" class="w3schools-logo w3-left">
+     <a href="#" class="w3schools-logo w3-left">
      <img class="w3-image" height="50" width="60" src="imgs/logo.png"> 
      </a>     
      
      
 <a href="index.php" class="w3-bar-item customfont w3-mobile w3-button" style="font-family: 'Alfa Slab One', cursive;">Inicio</a>
      
-   <a href="#" class="w3-bar-item w3-button w3-mobile"  style="font-family: 'Alfa Slab One', cursive;">Contato</a>
+<a href="contato.php" class="w3-bar-item w3-button w3-mobile"  style="font-family: 'Alfa Slab One', cursive;">Contato</a>
      
    <form class="w3-bar-item w3-mobile" action="#">
      <input type="text" class="w3-bar-item w3-input w3-mobile w3-center" placeholder="Pesquisar livro..." style="padding:5px;" />
@@ -54,7 +54,7 @@
  
              <a href="index.php" class="w3-bar-item w3-mobile w3-center w3-button abrilfont" style="font-family: 'Alfa Slab One', cursive;">Inicio</a>
      
-   <a href="#" class="w3-bar-item w3-button w3-mobile w3-center"  style="font-family: 'Alfa Slab One', cursive;">Contato</a>
+             <a href="contato.php" class="w3-bar-item w3-button w3-mobile w3-center"  style="font-family: 'Alfa Slab One', cursive;">Contato</a>
    
      
         <a href="login.php" class="w3-bar-item w3-mobile w3-button abrilfont w3-center" style="font-family: 'Alfa Slab One', cursive;">Entrar</a>

@@ -388,8 +388,12 @@ public function consultarMeuLivro(){
          $estado = $linha2['estadoConservacaoLivro'];
          $genero = $linha2['generoLivro'];
          
-         echo"<div class='w3-container'>  
-             <table class='w3-table' border='2'>
+         
+        
+         
+          echo"
+         <div class='w3-container w3-center'>  
+             <table width='70%' class='w3-table w3-bordered w3-card-4' border='3'>
       <form method='POST' action='../TrocandoConhecimentosFINAL/acoes/excluindoLivro.php'>
     <input type='hidden' name='cd' value='$cdLivro'>
          
@@ -407,7 +411,7 @@ public function consultarMeuLivro(){
         
        
 <tr>
-  <td class='w3-light-gray w3-hover-blue w3-hide-small w3-hide-medium w3-resposnsive'>
+  <td class='w3-light-gray w3-hide-small w3-hide-medium w3-resposnsive'>
     <img class='w3-image w3-center' width='100' src='capaslivros/$capa'>
   </td>
 
@@ -440,12 +444,14 @@ public function consultarMeuLivro(){
 
 </form>
  </div>
-";
 
+      
+            ";
             
         }
         
         }
+        
         /*
         $stmt2 = $con->prepare("SELECT * FROM livro WHERE cdLivro=? ");
         

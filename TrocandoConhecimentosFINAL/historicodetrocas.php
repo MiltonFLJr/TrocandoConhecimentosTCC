@@ -35,7 +35,7 @@
        <div class="w3-top">
  <div class="w3-bar w3-black w3-border-4 w3-mobile w3-card-4 w3-large w3-hide-small w3-hide-medium">
 
-     <a href="index.html" class="w3schools-logo w3-left">
+     <a href="#" class="w3schools-logo w3-left">
      <img class="w3-image" hegiht="50" width="60" src="imgs/logo.png"> 
      </a>     
      
@@ -60,7 +60,7 @@
 <div class="w3-dropdown-click">
   <button onclick="myFunction3()" class="w3-button w3-black" style="font-family: 'Alfa Slab One', cursive;">Trocas ▼</button>
   <div id="Demo3" class="w3-dropdown-content w3-bar-block w3-border">
-    <a href="#" class="w3-bar-item w3-button">Solicitaçoes enviadas</a>
+    <a href="solicitacoestrocaenviadas.php" class="w3-bar-item w3-button">Solicitaçoes enviadas</a>
     <a href="solicitacoespendentestroca.php" class="w3-bar-item w3-button">Solicitaçoes recebidas</a>
     <a href="#" class="w3-bar-item w3-button">Historico</a>
   </div>
@@ -173,7 +173,7 @@ $avatar = $linha['avatar'];
         <div class="w3-dropdown-click">
   <button onclick="myFunction6()" class="w3-button w3-center" style="font-family: 'Alfa Slab One', cursive;background-color:#2B2B2B;">Trocas ▼</button>
   <div id="Demo6" class="w3-dropdown-content w3-bar-block w3-border">
-    <a href="#" class="w3-bar-item w3-button">Solicitaçoes enviadas</a>
+    <a href="solicitacoestrocaenviadas.php" class="w3-bar-item w3-button">Solicitaçoes enviadas</a>
     <a href="solicitacoespendentestroca.php" class="w3-bar-item w3-button">Solicitaçoes recebidas</a>
     <a href="#" class="w3-bar-item w3-button">Historico</a>
   </div>
