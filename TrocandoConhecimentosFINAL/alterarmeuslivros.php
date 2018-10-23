@@ -80,7 +80,26 @@
      </a>     
 
        <a class="w3-right w3-hide-medium w3-hide-small">
-     <img class="w3-image" width="53" src="imgs/avatar.jpeg"> 
+     <?php 
+
+include 'conexao.php';
+
+$stmt = $con->prepare("SELECT avatar FROM usuario WHERE email=?");
+
+$stmt->bindParam(1,$_SESSION['email']);
+
+$stmt->execute();
+
+while($linha = $stmt->fetch(PDO::FETCH_ASSOC)){
+
+$avatar = $linha['avatar'];
+
+ echo"<img class='w3-image w3-center' width='50' src='avatarusuarios/$avatar'>";
+
+}
+
+
+     ?>
      </a>     
 
     </div>   
@@ -93,7 +112,26 @@
          
 
           <a class="w3-left w3-hide-large">
-     <img class="w3-image" width="53" src="imgs/avatar.jpeg"> 
+        <?php 
+
+include 'conexao.php';
+
+$stmt = $con->prepare("SELECT avatar FROM usuario WHERE email=?");
+
+$stmt->bindParam(1,$_SESSION['email']);
+
+$stmt->execute();
+
+while($linha = $stmt->fetch(PDO::FETCH_ASSOC)){
+
+$avatar = $linha['avatar'];
+
+ echo"<img class='w3-image w3-center' width='50' src='avatarusuarios/$avatar'>";
+
+}
+
+
+     ?>
      </a>     
 
          <a class="w3-bar-item w3-left w3-hide-large">

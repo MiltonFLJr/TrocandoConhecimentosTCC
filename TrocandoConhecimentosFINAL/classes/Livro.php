@@ -200,7 +200,7 @@ public function alterarMeuLivro($codigoLivro,$nomeLivro,$autorLivro,$idadeLivro,
         
    echo "<html>";
    echo "<head>";
-   echo "<meta http-equiv='refresh' content='0;url=TELALGDmeusLivros.php'>";
+   echo "<meta http-equiv='refresh' content='0;url=../meuslivroscadastrados.php'>";
    echo "</head>";
     echo "</html>";   
     

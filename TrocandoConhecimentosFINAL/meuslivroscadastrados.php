@@ -359,7 +359,7 @@ SELEÇÃO POR MENU SEM USO */
         echo "</td>"; 
         
         echo "<td>";
-        echo "<button type='submit' class='w3-button w3-blue' style='$font;'>Enviar solicitação troca</button>";
+        echo "<button type='submit' class='w3-button w3-blue' style='$font;'>Enviar solicitação de troca</button>";
         echo "</td>";
         
         echo "</tr>";

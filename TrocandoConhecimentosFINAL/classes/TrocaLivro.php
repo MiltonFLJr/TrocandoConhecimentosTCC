@@ -69,7 +69,7 @@ class TrocaLivro extends LivroTrocaLivro {
           $stmt5->execute();
                   
                   
-      echo header('location:TELALGDhistoricoTrocas.php');
+      echo header('location:../historicodetrocas.php');
      
   }
       /* EXCLUIR DADOS DAS TABELAS DE TROCA PARA ALOCAR NO HISTÓRICO*/

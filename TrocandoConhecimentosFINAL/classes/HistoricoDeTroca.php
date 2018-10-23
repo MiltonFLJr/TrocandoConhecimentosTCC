@@ -75,11 +75,11 @@ while($linha2 = $stmt2->fetch(PDO::FETCH_ASSOC)){
        echo "</td>";
        
            echo  "<td class='w3-center'>";
-        echo $linha2['resultadoTroca'];
+        echo $linha2['nomeLivroOferecido'];
        echo "</td>";
 
        echo  "<td class='w3-center'>";
-        echo $linha2['nomeLivroOferecido'];
+         echo $linha2['resultadoTroca'];
        echo "</td>";
        
         echo  "<td class='w3-center'>";
